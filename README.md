@@ -14,16 +14,19 @@ the `relayready` command and `relayready` Python package.
 Early. The project has one maintainer and no production adopters yet. Milestones M0 through M5 implement the version 0.1 contracts, deterministic CLI, checked readbacks, invariant chains, portable agent integrations, and Relay Bench. The M4 owner-run cross-vendor exercise and M5 real-runner comparison remain explicit external gates.
 
 Project owner and lead maintainer: **Pavel Mihai Lucian**,
-[lucian.pavel@pawelworks.com](mailto:lucian.pavel@pawelworks.com).
+[@pavelpxp500](https://github.com/pavelpxp500), affiliated with PAWELWORKS, Romania.
+Contact: [lucian.pavel@pawelworks.com](mailto:lucian.pavel@pawelworks.com).
 Try the [public demonstration](https://relayready.pavel752770.chatgpt.site/).
 Source: [pawelworks/relayready](https://github.com/pawelworks/relayready).
 The reviewed, AI-assisted source import is public with the owner's authorized DCO
 sign-off. See [GitHub Actions](https://github.com/pawelworks/relayready/actions)
 and the [source-publication record](docs/SOURCE_PUBLICATION_REVIEW.md).
 
-See the [roadmap](docs/ROADMAP.md), [AAIF application draft](docs/AAIF_APPLICATION_DRAFT.md)
-and [release checklist](docs/RELEASE_CHECKLIST.md). No foundation submission,
-acceptance or donation has occurred.
+See the [roadmap](docs/ROADMAP.md), [AAIF application draft](docs/AAIF_APPLICATION_DRAFT.md),
+[Sandbox thesis](docs/AAIF_SANDBOX_THESIS.md) and
+[release checklist](docs/RELEASE_CHECKLIST.md). Sandbox is the proposed entry
+stage, not a status already held. No foundation submission, acceptance,
+endorsement or donation has occurred.
 
 ## Interactive workbench
 

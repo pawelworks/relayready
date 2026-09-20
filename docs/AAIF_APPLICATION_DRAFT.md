@@ -53,15 +53,15 @@ evaluation. No executed pilot or improvement estimate is implied.
 ## Project locations
 
 - Website: <https://relayready.pavel752770.chatgpt.site/> (published publicly).
-- Repository: <https://github.com/pawelworks/relayready> (created, currently empty).
+- Repository: <https://github.com/pawelworks/relayready> (public source).
 - Issue tracker location: <https://github.com/pawelworks/relayready/issues>.
 
 The earlier namespace-access blocker is resolved. The Pawelworks organization
 exists on GitHub's Free plan under `pavelpxp500`; the intended public repository
 has administrative access, issues and private vulnerability reporting enabled.
-It is still empty. Dependency-policy corrections and contribution-provenance
-review remain before publishing source and running hosted CI. No code has been
-pushed to the personal placeholder repository.
+The reviewed, corrected source was imported at commit
+`d058b5f984347bb147bf98a5810c7a337ffbea54` with the owner's authorized DCO
+sign-off. No code has been pushed to the personal placeholder repository.
 
 ## People, governance and contributions
 
@@ -75,17 +75,20 @@ maintainers or community contributors.
 The repository's `GOVERNANCE.md` records maintainer-led decisions, a seven-day
 normal review window, and at least two weeks for normative specification
 changes. `CONTRIBUTING.md` describes DCO sign-offs and review; issue templates
-cover bugs, rule proposals, fixtures and specification changes. Public operation
-of this process still depends on publishing the intended repository. Historical
-commits lack DCO sign-offs and require rights/provenance review; no retroactive
-personal signature has been fabricated.
+cover bugs, rule proposals, fixtures and specification changes. The initial public
+import discloses AI-assisted preparation and records the owner's contribution-rights
+attestation. Earlier unsigned website-era commits remain in local deployment
+history, separate from the public import; no retroactive signature was fabricated.
+Branch protection requires the CI matrix and DCO checks without pretending there
+is an independent second maintainer.
 
 ## Engineering, security and roadmap
 
-The proposed CI matrix covers Python 3.11 through 3.14 on Linux, macOS and
-Windows, plus Node 24 browser checks. Tagged artifact builds must pass that
-matrix and match package metadata. Workflows are prepared locally, not yet
-verified on the intended GitHub repository. Release artifacts are not
+The hosted CI matrix passed all 12 Python 3.11 through 3.14 jobs on Linux, macOS
+and Windows, including Node 24 browser checks, for the initial public import in
+[run 35540740611](https://github.com/pawelworks/relayready/actions/runs/35540740611).
+Tagged artifact builds must pass the same matrix and match package metadata;
+that tag-triggered release path has not been exercised. Release artifacts are not
 automatically uploaded to PyPI. There is no established release cadence.
 
 Runtime dependencies are jsonschema, PyYAML and rfc3339-validator. The corrected

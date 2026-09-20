@@ -1,21 +1,24 @@
 stafeta_readback: "0.1"
-handoff_id: "01M30E0S52Y20MASSZJGDMXZ21"
-created: "2026-09-20T22:12:06Z"
+handoff_id: "01M30DQ44B9E2RTMQWVVVSVR9D"
+created: "2026-09-20T22:06:50Z"
 receiver:
   agent: "codex-desktop"
   vendor: "openai"
   model: null
-goal_restated: "Close the protected source-publication workflow, then prepare for external foundation review without confusing verified CI with adoption or institutional acceptance."
+goal_restated: "Use the owner's explicit attestation to publish the tested source snapshot, retaining deployment history and separating GitHub verification from any foundation acceptance."
 invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
 invariants_echo:
   - "Never publish artifacts or deploy documentation without owner approval."
   - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
   - "Never begin M2 until the owner accepts M1."
 will_not_redo: [1, 2, 3, 4, 5]
-rechecked: []
+rechecked:
+  - item: 5
+    result: confirmed
+    note: "Fresh GitHub API checks confirm the intended public repository is empty, grants admin access and has private vulnerability reporting enabled."
 conflicts: []
 questions_for_human:
   - "What public GitHub identity and affiliation should the application list?"
   - "What country or legal entity details apply to the proposed signatory?"
   - "Does the owner approve the actual foundation submission and transfer commitments after reviewing them?"
-first_action: "Inspect the publication-record PR and final main CI in GitHub, completing protected checks if necessary before continuing foundation preparation. This readback records the current agent's state, not independent acceptance."
+first_action: "Create the authorized signed-off source import on a separate local branch, verify its tree and DCO trailer, and push to the intended existing repository. This readback records the current agent's state, not independent acceptance."

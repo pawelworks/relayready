@@ -13,8 +13,9 @@ a contribution agreement or DCO signature. No second maintainer is currently app
 
 The [Pawelworks GitHub organization](https://github.com/pawelworks) now exists on
 the Free plan under the owner's existing `pavelpxp500` account. The public
-`pawelworks/relayready` repository has been created with administrative access
-verified. Source publication remains pending; the repository is currently empty.
+`pawelworks/relayready` repository contains the owner-authorized source import.
+The import includes the approved DCO sign-off; prior local deployment commits
+remain separate and were not retroactively signed.
 This GitHub organization does not establish a legal entity or corporate authority.
 
 RelayReady is actively seeking a second core maintainer from a different organization. See `GOVERNANCE.md` for the selection process.

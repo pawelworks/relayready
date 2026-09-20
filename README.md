@@ -16,10 +16,10 @@ Early. The project has one maintainer and no production adopters yet. Milestones
 Project owner and lead maintainer: **Pavel Mihai Lucian**,
 [lucian.pavel@pawelworks.com](mailto:lucian.pavel@pawelworks.com).
 Try the [public demonstration](https://relayready.pavel752770.chatgpt.site/).
-Source destination: [pawelworks/relayready](https://github.com/pawelworks/relayready).
-The owner authorized the reviewed, AI-assisted source import with a public DCO
-sign-off on 20 September 2026 UTC. Hosted verification is a separate release gate;
-see the [source-publication record](docs/SOURCE_PUBLICATION_REVIEW.md).
+Source: [pawelworks/relayready](https://github.com/pawelworks/relayready).
+The reviewed, AI-assisted source import is public with the owner's authorized DCO
+sign-off. See [GitHub Actions](https://github.com/pawelworks/relayready/actions)
+and the [source-publication record](docs/SOURCE_PUBLICATION_REVIEW.md).
 
 See the [roadmap](docs/ROADMAP.md), [AAIF application draft](docs/AAIF_APPLICATION_DRAFT.md)
 and [release checklist](docs/RELEASE_CHECKLIST.md). No foundation submission,

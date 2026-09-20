@@ -15,16 +15,24 @@ approval, legal clearance or an already completed contribution.
 ## Before the first source release
 
 - [x] Make `pawelworks/relayready` accessible to the authenticated GitHub account.
-  The Free-plan organization and public empty repository now exist; admin access
+  The Free-plan organization and public source repository exist; admin access
   was verified. The earlier not-found result is superseded.
-- [ ] Publish exact reviewed source to that destination and verify public access.
+- [x] Publish reviewed source to that destination and verify public access.
+  The signed-off import is `d058b5f984347bb147bf98a5810c7a337ffbea54`;
+  implementation, tests, specifications, app and integrations match the reviewed candidate.
 - [x] Enable and verify private vulnerability reporting on the intended repository.
   API verification returned enabled; email remains an available private route.
-- [ ] Run the hosted Linux/macOS/Windows and Python 3.11-3.14 CI matrix.
-- [ ] Configure appropriate protected-branch checks, including DCO for new PRs.
-- [ ] Review all historical commits and contribution rights. The five-commit
-  website-era baseline lacks DCO sign-offs. Future PR checks exclude commits
-  already on the base branch and cannot clear this historical gap.
+- [x] Run the hosted Linux/macOS/Windows and Python 3.11-3.14 CI matrix.
+  All 12 jobs passed for the initial public import in
+  [run 35540740611](https://github.com/pawelworks/relayready/actions/runs/35540740611).
+- [x] Configure protected-branch checks, including DCO for new PRs. Main requires
+  all 12 CI jobs plus DCO, an up-to-date branch and resolved conversations, including
+  for administrators. Force pushes and deletion are blocked. No second-person
+  approval is required while there is only one maintainer.
+- [x] Record the owner's contribution-rights attestation for the reviewed import.
+  The five unsigned website-era commits remain intact in local deployment history,
+  outside the new public import. They were audited but not retroactively signed;
+  future publication of that history needs its own provenance decision.
 - [x] Record a resolved direct/transitive runtime dependency and license inventory;
   scan the candidate for secrets and review findings without publishing secrets.
 - [x] Correct the dependency-policy conflict. Plain jsonschema plus an explicit
@@ -35,7 +43,7 @@ approval, legal clearance or an already completed contribution.
   is generated from the current project version.
 - [x] Verify a clean installed wheel, source distribution and contribution ZIP.
   The corrected 0.1.3.dev0 artifacts build locally; the ZIP verifies per-file
-  hashes. They are uncommitted review artifacts, not an approved public release.
+  hashes. They are local review artifacts, not a tagged or package-registry release.
 - [ ] Have the owner approve the exact release revision, artifact checksums and
   unresolved limitations before tagging or publishing package artifacts.
 
@@ -43,7 +51,7 @@ Keep cryptographic commit signatures, DCO declarations, checksums and legal
 rights review distinct. None substitutes for the others. Do not add a personal
 `Signed-off-by` declaration on the owner's behalf without explicit attestation.
 Use current-version artifact paths, not `dist/*`, which may contain old builds.
-The proposed first public import and exact owner attestation are described in
+The first public import and exact owner attestation are described in
 [source-publication review](SOURCE_PUBLICATION_REVIEW.md). The original local
 deployment history must remain intact; an import does not retroactively sign it.
 

@@ -21,7 +21,9 @@ The project was developed in September 2026 with AI-assisted implementation,
 initially named Stafeta and renamed RelayReady before release. The frozen
 `stafeta` and `stafeta_readback` wire identifiers and legacy `stafeta` command
 remain compatible. The published-source development candidate is `0.1.3.dev0`;
-the published presentation app is the earlier `0.1.2.dev0` workbench snapshot.
+the published presentation app retains the earlier `0.1.2.dev0` workbench
+behavior, with a subsequent owner-supplied PAWELWORKS footer credit. The company
+mark is separate from RelayReady project trademarks; it is not offered for donation.
 
 The intended contribution is the specification, schemas, implementation, CLI,
 portable integration instructions, negative tests, reproducible fixtures,
@@ -58,7 +60,8 @@ evaluation. No executed pilot or improvement estimate is implied.
 
 ## Project locations
 
-- Website: <https://relayready.pavel752770.chatgpt.site/> (published publicly).
+- Website: <https://relayready.org/> (published publicly, HTTPS active).
+- Underlying hosting address: <https://relayready.pavel752770.chatgpt.site/>.
 - Repository: <https://github.com/pawelworks/relayready> (public source).
 - Issue tracker location: <https://github.com/pawelworks/relayready/issues>.
 
@@ -136,9 +139,13 @@ Growth milestones are future goals in the thesis, not fabricated current users.
 If admitted to Sandbox, the README must explicitly disclaim endorsement.
 
 Public project discussion currently uses GitHub issues; private security and
-conduct reports use the approved email. The owner reports no additional
-project-specific social accounts, domains, sponsors or contractual obligations
-beyond the repository and website. This is an owner declaration, not an
+conduct reports use the approved email. At initial submission the owner reported
+no additional project-specific assets or obligations. Subsequently, on
+21 September 2026 (Romania local date), the owner registered `relayready.org`
+through Cloudflare and authorized its inclusion in the project-asset inventory.
+No additional social account or sponsor is declared. Registration introduces
+domain renewal and registrar obligations; these and eventual transfer arrangements
+must be coordinated with LF. The original declaration is historical, not an
 independent audit. Infrastructure requested is public Git hosting,
 CI and static hosting. No grant or funding request is made; shared hosting account
 boundaries require coordination before any transfer.

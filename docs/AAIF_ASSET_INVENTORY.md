@@ -28,7 +28,9 @@ omitted because they are not requested by the application.
 | GitHub repository, issues and CI | `pawelworks/relayready`; protected main and private vulnerability reporting | Coordinate repository transfer or LF-approved administration with LF IT if admitted. This does not propose donating the whole PAWELWORKS organization or personal GitHub account. |
 | Website source and app | Portable static files in `out/`; published demonstration | Project-specific source is in scope. Confirm any final hosting migration and preservation of evidence/download links. |
 | Existing hosted Site | `relayready.pavel752770.chatgpt.site`; Site `appgprj_6aaff178f66c81919fea06215bef5a2f` | Account/project transfer capability has not been verified. Discuss a project-specific transfer or migration with LF IT; do not promise portability of the current subdomain. No personal OpenAI account or credentials are offered. |
-| Additional project domains, social accounts, sponsorship and obligations | Owner answered that there are no additional project assets or obligations beyond the repository and current website | Record as an owner declaration, not an independent search or audit. No separate project social account, domain registration or sponsor is claimed. Reconcile any later-discovered dependency with LF. |
+| Project domain: `relayready.org` | Owner's Cloudflare purchase confirmation; registrar API reported active registration, expiring `2027-09-20T23:03:43Z`; Sites reports active domain and TLS; public HTTPS site and workbench returned 200 | Added after the original application, on 21 September 2026 local date. Include this project-specific domain in the proposed asset schedule. The present account holder remains responsible for renewal until an agreed handover; verify current billing/auto-renew and registrar transfer restrictions when arranging it. No automatic renewal, registrant legal identity, completed transfer or offer of the entire Cloudflare account is inferred. |
+| Other project social accounts, sponsorship and obligations | The owner's original declaration of no additional assets predates the domain registration above | Retain that declaration as historical. No other project social account or sponsor is declared; domain registration/renewal obligations now exist and must be reconciled with LF. |
+| PAWELWORKS company footer mark | Owner-supplied `pawelworks-brand_5.zip`; small website/app attribution | Separate company branding, not a RelayReady project trademark offered for donation. The owner authorized public logo/domain commits and their DCO sign-off; this does not authorize a company-trademark transfer or use beyond applicable license and trademark rules. |
 | Company email/domain | Contact at `pawelworks.com` approved by owner | A contact address does not establish domain ownership. The broader company domain and mailbox are not automatically included in this proposed project-only scope. Any shared dependency needs an agreed replacement or explicit treatment. |
 | Third-party materials and services | Dependency inventory in `THIRD_PARTY_LICENSES.md`; conference research citations | Preserve applicable notices. Conference slide files are not in the contribution package; third-party software and services are not represented as company-owned assets. |
 
@@ -75,9 +77,25 @@ and authorize** to a question covering:
 - publishing these application-documentation changes with the existing
   `Pavel Mihai Lucian <lucian.pavel@pawelworks.com>` DCO sign-off.
 
-The owner separately reported no additional RelayReady-specific assets or
-obligations beyond the repository and website. This records the owner's
+At original submission the owner separately reported no additional RelayReady-specific
+assets or obligations beyond the repository and website. This records that dated
 declaration; it is not independent legal clearance or proof of registry facts.
 The approval does not authorize signing unseen LF contracts, transferring the
 company or personal accounts, or treating admission as already granted. Any
 shared-account boundaries must be settled with LF in the actual asset schedule.
+
+## Post-submission amendment: 21 September 2026
+
+After the original submission, the owner purchased `relayready.org`, requested
+publication, and then explicitly requested updating GitHub, AAIF proposal 44 and
+this asset inventory. The domain routes to the existing Site; no replacement
+hosting account or project was created. The underlying Sites address remains
+available. Registration and hosting evidence establishes the current technical
+configuration, not independent legal ownership verification.
+
+The owner also explicitly authorized the existing
+`Pavel Mihai Lucian <lucian.pavel@pawelworks.com>` DCO sign-off for the domain and
+logo commits, while keeping the PAWELWORKS company mark outside the RelayReady
+trademark donation. The original submission snapshot and its body hash remain
+preserved in [the submission record](AAIF_SUBMISSION_RECORD.md). The revised
+inventory is a proposed schedule for LF discussion, not an executed transfer.

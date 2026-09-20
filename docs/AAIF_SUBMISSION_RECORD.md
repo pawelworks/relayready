@@ -5,7 +5,7 @@ RelayReady was submitted for Sandbox consideration in
 **Submitted does not mean admitted, endorsed or donated.** No LF agreement has
 been signed and no project account or asset has been transferred.
 
-## Verified publication
+## Original submission (immutable evidence)
 
 - Title: `[Project Proposal] RelayReady - Sandbox`.
 - Submitter: `pavelpxp500`, using the owner-authorized account.
@@ -47,16 +47,44 @@ Supporting documents are public in
 [RelayReady PR #2](https://github.com/pawelworks/relayready/pull/2), not yet merged
 into main. This non-normative proposal remains open for the normal seven-calendar-day
 review described in governance; it was opened at `2026-09-20T22:45:20Z`.
-There is no automatic merge or scheduled monitor. The immutable document links
-in the AAIF proposal do not depend on a future merge.
+No automatic merge or scheduled monitor existed at original submission. On
+21 September 2026 the owner authorized completing this PR after review, and a
+thread follow-up was scheduled for 28 September 2026 at 10:00 Europe/Bucharest
+(07:00 UTC). It must inspect the current head, passing required checks and
+unresolved objections before attempting a normal protected merge. A later
+substantive amendment requires a fresh full seven-day review allowance. The
+schedule is not a guarantee of merge or independent human approval. Early GitHub
+auto-merge remains disabled. The immutable original document links in the AAIF
+proposal do not depend on a future merge.
 
 The implementation baseline remains `c3c91545f6c7584a7f093e8904a7e8d26fc22d1a`,
 with twelve successful jobs in [CI run 35541220709](https://github.com/pawelworks/relayready/actions/runs/35541220709).
 The documentation PR has its own hosted checks; inspect their exact revision and
 terminal outcome rather than reusing the implementation result. The public Site
-and frozen wire schemas were not changed or redeployed for this submission.
+and frozen wire schemas were not changed or redeployed for the original submission.
 
 Next, respond to genuine foundation questions, coordinate shared-account scope
 with LF, and have the company representative review and sign actual documents
 if supplied. Foundation votes and completed onboarding remain external steps.
 Do not claim admission or execute transfers based solely on the submitted form.
+
+## Domain and branding amendment: 21 September 2026
+
+After the original submission, the owner registered `relayready.org` through
+Cloudflare and authorized updating the application and project inventory. The
+primary site is now <https://relayready.org/>; the original Sites address remains
+available. The registrar reported active registration and Sites reported active
+custom-domain and TLS status. Both the site and workbench returned HTTP 200 with
+the owner-supplied PAWELWORKS footer mark. The presentation behavior and frozen
+protocol did not change.
+
+The owner explicitly authorized the existing DCO identity for these domain and
+logo commits. The company mark remains separate from RelayReady project trademarks
+and is not offered as a company-trademark donation. The revised
+[asset inventory](AAIF_ASSET_INVENTORY.md) adds the project domain, renewal duties
+and the need to coordinate any eventual LF transfer. It preserves the original
+no-additional-assets declaration as historical, rather than silently rewriting it.
+
+These are administrative and branding amendments, not a new application or a
+claim of AAIF acceptance. The original issue timestamp, body hash and supporting
+revision above remain unchanged as historical evidence.

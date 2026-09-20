@@ -57,7 +57,7 @@ fixtures and 150 deterministic mock relay runs. Coverage of 97.38% refers only
 to `stafeta.rules`, not the whole product. Mock runs establish checker behavior,
 not production safety or model performance. See [verification](VERIFICATION.md).
 
-The [public workbench](https://relayready.pavel752770.chatgpt.site/workbench.html)
+The [public workbench](https://relayready.org/workbench.html)
 labels its simulated observations and supports exporting evidence for local
 Python validation. It remains the earlier `0.1.2.dev0` presentation snapshot;
 the source revision above contains subsequent validator and packaging fixes.

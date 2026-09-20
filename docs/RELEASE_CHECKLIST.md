@@ -72,8 +72,10 @@ deployment history must remain intact; an import does not retroactively sign it.
   independently registry-verified; no title or legal name was invented.
 - [x] Prepare a [project-asset inventory](AAIF_ASSET_INVENTORY.md), including
   shared hosting and company/personal account boundaries.
-- [x] Record the owner's company contribution-authority attestation and declaration
-  of no additional project assets, accounts, sponsorship or obligations.
+- [x] Record the owner's company contribution-authority attestation and original
+  declaration of no additional project assets, accounts, sponsorship or obligations.
+  The subsequent `relayready.org` registration is now listed in the asset inventory;
+  the original declaration is not a claim that no project domain exists.
   This is not an independent IP or legal audit.
 - [x] Owner approves the final public application, including company/address
   details and the required conditional trademark/account-transfer commitment.

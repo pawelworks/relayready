@@ -16,7 +16,7 @@ Early. The project has one maintainer and no production adopters yet. Milestones
 Project owner and lead maintainer: **Pavel Mihai Lucian**,
 [@pavelpxp500](https://github.com/pavelpxp500), affiliated with PAWELWORKS, Romania.
 Contact: [lucian.pavel@pawelworks.com](mailto:lucian.pavel@pawelworks.com).
-Try the [public demonstration](https://relayready.pavel752770.chatgpt.site/).
+Try the [public demonstration](https://relayready.org/).
 Source: [pawelworks/relayready](https://github.com/pawelworks/relayready).
 The reviewed, AI-assisted source import is public with the owner's authorized DCO
 sign-off. See [GitHub Actions](https://github.com/pawelworks/relayready/actions)

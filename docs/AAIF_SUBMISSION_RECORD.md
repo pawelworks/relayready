@@ -88,3 +88,19 @@ no-additional-assets declaration as historical, rather than silently rewriting i
 These are administrative and branding amendments, not a new application or a
 claim of AAIF acceptance. The original issue timestamp, body hash and supporting
 revision above remain unchanged as historical evidence.
+
+The existing issue was amended, not duplicated, at `2026-09-20T23:26:14Z`.
+Readback through GitHub's API matched the authorized updated body after the
+same newline normalization and trimming used for the original record. Updated
+body SHA-256:
+`0a522f15b2053c9c768251c4fff70a20704328fe1cd04aae2bd36ba9e253be4f`.
+The amendment links inventory and application-context revision
+`b9a4995769baa3eb25f3f69179efe57358dd47b7`, while preserving the original
+`648f7b6` supporting links as historical snapshots. GitHub's repository homepage
+was also read back as `https://relayready.org/`.
+
+The logo source is separately submitted in
+[PR #3](https://github.com/pawelworks/relayready/pull/3), public commit
+`f250a60c79ded07e3ebe2946c6aede066de04c93`. Its `out/` files match the already
+deployed source `367ff0b5d79d9795c2417ad887492020ca76fc7c` exactly. Neither PR
+was merged or configured for early auto-merge as part of this amendment.

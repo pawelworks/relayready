@@ -4,3 +4,6 @@
 @media(max-width:760px){.app-header{align-items:start;flex-direction:column;gap:1rem}.app-header nav{margin:0;gap:1rem;flex-wrap:wrap}.workspace-grid{grid-template-columns:1fr}main{padding:1.5rem 1rem 3rem}.panel{padding:1.1rem}.control-panel{position:static}.control-panel fieldset{margin-top:.8rem}.workbench-intro h1{font-size:2rem}.panel-heading{flex-wrap:wrap}.suite-grid{grid-template-columns:1fr}.compare-controls{grid-template-columns:1fr}.diff-row{grid-template-columns:1fr}.decision-line h3{font-size:2rem}.decision-line{align-items:start}.decision-line>span{width:30px;font-size:1.7rem}footer{display:block;padding:1.5rem 1rem}.scope-note{font-size:.8125rem}.evidence-row{gap:.7rem}.run-card{flex-basis:190px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 fieldset{min-inline-size:0}input[type=datetime-local]{min-width:0;font-size:.875rem}
+.maker-credit{display:flex;align-items:center;gap:.65rem;color:var(--muted);font-size:.875rem;white-space:nowrap;flex:none}
+.maker-credit img{display:block;width:140px;height:auto;flex:none}
+@media(max-width:760px){.maker-credit{margin-top:1.25rem}}

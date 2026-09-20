@@ -1,21 +1,18 @@
 stafeta_readback: "0.1"
-handoff_id: "01M30E0S52Y20MASSZJGDMXZ21"
-created: "2026-09-20T22:12:06Z"
+handoff_id: "01M30JDN1HRJYAW56J34R6TA6R"
+created: "2026-09-20T23:29:02Z"
 receiver:
   agent: "codex-desktop"
   vendor: "openai"
   model: null
-goal_restated: "Close the protected source-publication workflow, then prepare for external foundation review without confusing verified CI with adoption or institutional acceptance."
+goal_restated: "Verify the public-record amendments, keep the logo review separate, and execute only the scoped deferred PR 2 merge once its review and protection gates permit it."
 invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
 invariants_echo:
   - "Never publish artifacts or deploy documentation without owner approval."
   - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
   - "Never begin M2 until the owner accepts M1."
-will_not_redo: [1, 2, 3, 4, 5]
+will_not_redo: [1, 2, 3, 4, 5, 6, 7]
 rechecked: []
 conflicts: []
-questions_for_human:
-  - "What public GitHub identity and affiliation should the application list?"
-  - "What country or legal entity details apply to the proposed signatory?"
-  - "Does the owner approve the actual foundation submission and transfer commitments after reviewing them?"
-first_action: "Inspect the publication-record PR and final main CI in GitHub, completing protected checks if necessary before continuing foundation preparation. This readback records the current agent's state, not independent acceptance."
+questions_for_human: []
+first_action: "Inspect the exact latest CI/DCO outcomes for both public pull requests; do not treat earlier passing runs as evidence for a changed head. This readback records current-agent state, not independent human acceptance."

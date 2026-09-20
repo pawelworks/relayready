@@ -19,8 +19,8 @@ one security contact and no independently staffed security team.
 The maintainer will assess reports, coordinate fixes and disclosure with the
 reporter, and publish an advisory when appropriate. Please avoid public details
 until disclosure is coordinated. GitHub private vulnerability reporting is enabled
-and was verified for `pawelworks/relayready`. The repository is still awaiting its
-initial source push; email remains an available private reporting route.
+and was verified for the public source repository `pawelworks/relayready`.
+Email remains an available private reporting route.
 
 ## Scope and limitations
 

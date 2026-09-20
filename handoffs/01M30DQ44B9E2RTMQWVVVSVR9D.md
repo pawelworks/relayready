@@ -1,11 +1,11 @@
 ---
 stafeta: "0.1"
-id: "01M30E0S52Y20MASSZJGDMXZ21"
-created: "2026-09-20T22:12:06Z"
+id: "01M30DQ44B9E2RTMQWVVVSVR9D"
+created: "2026-09-20T22:06:50Z"
 task: "Prepare RelayReady for public source release and foundation review"
-status: ready_for_review
+status: in_progress
 profile: code
-parent: "01M30DQ44B9E2RTMQWVVVSVR9D"
+parent: "01M30D77TJ5CAD62DMT21SM1WM"
 sender:
   agent: "codex-desktop"
   vendor: "openai"
@@ -24,7 +24,7 @@ Publish an honestly documented, reviewed RelayReady source candidate at the owne
 - [x] Create the intended GitHub organization and public empty repository.
 - [x] Correct dependency policy, stale metadata and timestamp validation; verify locally.
 - [x] Obtain the owner's reviewed contribution-rights attestation and sign-off authorization.
-- [x] Publish the reviewed source import and verify hosted CI.
+- [ ] Publish the reviewed source import and verify hosted CI.
 - [ ] Obtain separate authority before foundation submission or transfer commitments.
 
 ## Invariants
@@ -39,9 +39,8 @@ Publish an honestly documented, reviewed RelayReady source candidate at the owne
 - Pavel Mihai Lucian is the owner, lead maintainer, security lead, application contact and proposed signatory; the approved address is lucian.pavel@pawelworks.com. [verified 2026-09-20: owner replies]
 - The corrected 0.1.3.dev0 candidate passed 223 tests, 97.38 percent stafeta.rules coverage, Ruff, strict Mypy over 53 files, 23 browser vectors, five reproduced fixtures and 150 deterministic mock runs. [verified 2026-09-20: clean local environment checks]
 - A runtime-only wheel installation has nine dependencies declaring MIT or PSF-2.0 licenses and no fqdn; both CLI names, all four schemas and invalid timestamp rejection pass. [verified 2026-09-20: isolated wheel installation and metadata inspection]
-- The public pawelworks/relayready repository contains import d058b5f984347bb147bf98a5810c7a337ffbea54 with the authorized DCO sign-off. An anonymous README request succeeds. Private vulnerability reporting is enabled. [verified 2026-09-20: remote commit API, DCO check and anonymous HTTP 200]
-- All twelve hosted Python 3.11-3.14 CI jobs across Linux, macOS and Windows passed for the public import in run 35540740611. Main requires these checks plus DCO, including for admins; force pushes and deletion are blocked. [verified 2026-09-20: terminal Actions result and branch-protection API]
-- The owner authorized the reviewed Apache-2.0 source import and permanent public DCO sign-off using the approved name and email. The five unsigned website-era commits remain intact on local main, separate from public history. No foundation submission, transfer agreement, tagged package release, live pilot or independent audit has occurred. [verified 2026-09-20: owner reply, Git history and project records]
+- The public pawelworks/relayready repository is still empty and grants admin access; its private vulnerability reporting was enabled. Origin points to that intended repository. [recheck]
+- The owner authorized the reviewed Apache-2.0 source import and permanent public DCO sign-off using the approved name and email. The five website-era commits remain unsigned; the import preserves their local history and does not retroactively sign them. No source push, foundation submission, transfer agreement, live pilot or independent audit has occurred. [verified 2026-09-20: explicit owner reply, Git history and repository API]
 
 ## Done so far
 
@@ -51,10 +50,7 @@ Publish an honestly documented, reviewed RelayReady source candidate at the owne
 - Removed generated root PKG-INFO and ignored future copies; Git history retains the old file, and package builds generate current metadata.
 - Updated docs/SOURCE_PUBLICATION_REVIEW.md, docs/VERIFICATION.md and the release/application documents with current evidence and unresolved owner gates.
 - Recorded the explicit source-publication authorization and reviewed candidate ZIP checksum in docs/SOURCE_PUBLICATION_REVIEW.md.
-- Published the reviewed import and confirmed the exact remote SHA, public readability and successful hosted matrix in docs/SOURCE_PUBLICATION_REVIEW.md.
-- Configured thirteen required GitHub Actions checks and protected-branch controls without requiring a nonexistent second maintainer's approval.
-- Prepared publication-record documentation for the protected pull-request workflow; its eventual merge state must be checked in GitHub.
-- Archived the parent handoff and readback byte-for-byte under handoffs/01M30DQ44B9E2RTMQWVVVSVR9D.
+- Archived the parent handoff and readback byte-for-byte under handoffs/01M30D77TJ5CAD62DMT21SM1WM.
 
 ## Do not redo
 
@@ -66,10 +62,10 @@ Publish an honestly documented, reviewed RelayReady source candidate at the owne
 
 ## Next steps
 
-1. Check the publication-record pull request and final main CI state in GitHub; finish any outstanding protected merge checks before further publication work.
-2. Review the foundation application with the owner, including the unconfirmed public handle, affiliation and country or legal-entity details.
-3. Seek AAIF entry-route guidance and arrange independent review or live pilot evidence; disclose absence rather than inventing eligibility or adoption.
-4. Obtain final-form authorization before foundation submission or any contribution/transfer agreement. The source authorization did not supply missing facts or approve unseen terms.
+1. Prepare the authorized first public source import while retaining local deployment history; verify its tree and DCO trailer, then push only to pawelworks/relayready.
+2. Verify the remote source revision and public access; record actual publication evidence without claiming package-registry or foundation release.
+3. Inspect actual hosted CI results and configure appropriate branch checks. Do not claim a local test run is hosted verification.
+4. Review the final application, affiliation/signatory details and rights inventory separately; seek AAIF route guidance and independent/live pilot evidence without inventing them.
 
 ## Open questions
 
@@ -86,11 +82,11 @@ Publish an honestly documented, reviewed RelayReady source candidate at the owne
 - `docs/AAIF_APPLICATION_DRAFT.md`
 - `docs/ROADMAP.md`
 - `docs/PILOT_PROTOCOL.md`
-- `handoffs/01M30DQ44B9E2RTMQWVVVSVR9D.md`
+- `handoffs/01M30D77TJ5CAD62DMT21SM1WM.md`
 
 ## Environment
 
-- Local main retains c4066a3f2215c4ff5192b7a9c4b950ef357f222d. Public-source tracks origin/main from the authorized parentless import. This successor is prepared on publication-record for a protected PR; query GitHub for its later result.
+- At this checkpoint, local main retains c4066a3f2215c4ff5192b7a9c4b950ef357f222d. Create a separate public-source branch for the authorized parentless import; do not rewrite main or the deployed source history.
 - Fresh environments: tmp/permissive-venv and tmp/permissive-wheel-venv. Current artifact directory: dist/permissive-0.1.3. Older dist artifacts are not this candidate.
 - Run pytest, Ruff, Mypy, Node checks, fixture reproduction, mock bench, MkDocs strict and isolated wheel checks with these environments before release.
 - Existing public Site: appgprj_6aaff178f66c81919fea06215bef5a2f; successful deployment appgdep_6ab00b91b270819188eb8d8e74ade8e9; no Site changes are needed for source publication.

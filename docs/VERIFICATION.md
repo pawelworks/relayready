@@ -126,3 +126,20 @@ At this verification checkpoint, the public repository was empty pending the
 owner's contribution-rights attestation. The owner subsequently authorized the
 reviewed import and public DCO sign-off; see the source-publication record.
 No historical sign-off has been invented or history rewritten.
+
+## Public source and hosted verification, 20 September 2026 UTC
+
+The reviewed source is public at <https://github.com/pawelworks/relayready>.
+The initial import is `d058b5f984347bb147bf98a5810c7a337ffbea54`; GitHub's
+remote SHA matches the local signed-off commit. All 12 jobs in
+[CI run 35540740611](https://github.com/pawelworks/relayready/actions/runs/35540740611)
+completed successfully: Python 3.11, 3.12, 3.13 and 3.14 on Linux, macOS and Windows.
+Each job includes Python tests, lint/types, browser checks, fixture reproduction,
+mock bench, documentation and package builds. This supersedes the prior
+hosted-CI/public-source blockers, not the independent-review or live-pilot gates.
+
+Main's protection requires these 12 checks plus DCO, with administrator enforcement,
+up-to-date branches, resolved conversations, and no force pushes or branch deletion.
+The source-publication record distinguishes the owner-attested initial import from
+unsigned local deployment history. No PyPI release, foundation application,
+foundation acceptance or legal transfer occurred. The public website is unchanged.

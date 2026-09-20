@@ -3,7 +3,7 @@
 Recorded after GitHub organization setup, 20 September 2026 UTC
 (21 September in the owner's local time).
 
-## Verified account and repository state
+## Account state at the initial review
 
 - `pawelworks` exists on GitHub's Free plan under `pavelpxp500`.
 - The organization contact matches the owner-approved address.
@@ -11,6 +11,9 @@ Recorded after GitHub organization setup, 20 September 2026 UTC
   authenticated account administrative access.
 - Private vulnerability reporting is enabled on this intended repository.
 - No source has been pushed and no foundation application has been submitted.
+
+The account bullets above record the pre-publication checkpoint. Publication
+superseding that empty-repository state is recorded below.
 
 ## Read-only source audit
 
@@ -77,3 +80,33 @@ package-registry publication is authorized by this preparation step.
 Foundation submission and contribution/transfer agreements remain separate
 decisions requiring their actual final contents and terms to be reviewed. No
 such submission or agreement has been executed here.
+
+## Public source import
+
+The initial public source commit is
+[`d058b5f984347bb147bf98a5810c7a337ffbea54`](https://github.com/pawelworks/relayready/commit/d058b5f984347bb147bf98a5810c7a337ffbea54).
+GitHub's remote commit matches the local parentless import and includes the
+authorized author-matching DCO trailer. The local DCO checker passes on the entire
+public history at that checkpoint. A byte comparison confirmed 149 implementation,
+test, specification, app and integration files plus the checked project metadata
+scope were unchanged from the reviewed candidate; publication-status documents and
+successor handoffs record the new authorization.
+
+The local `main` branch still points to deployed commit
+`c4066a3f2215c4ff5192b7a9c4b950ef357f222d`, retaining all five deployment commits.
+The separate `public-source` branch tracks GitHub's `main`. No original commit was
+rewritten, no personal-placeholder source was pushed, and the Site was not redeployed.
+
+Main branch protection requires the 12 observed CI matrix checks and the DCO
+`check` job from GitHub Actions, strict up-to-date checks, resolved conversations
+and linear history. Administrators are subject to these rules; force pushes and
+deletion are disabled. Pull requests are required, with zero mandatory independent
+approvals because only one maintainer is confirmed. Private vulnerability reporting
+remains enabled. These controls are not a security audit or independent review.
+
+All 12 jobs in [hosted CI run 35540740611](https://github.com/pawelworks/relayready/actions/runs/35540740611)
+passed for the import: Python 3.11-3.14 across Linux, macOS and Windows. No hosted
+success was claimed before the terminal run result. Publication-status documentation
+is submitted through a protected pull request, which also exercises the hosted
+DCO check. Its current status is visible in GitHub; this paragraph does not claim
+that a subsequent PR or release has already passed or merged.

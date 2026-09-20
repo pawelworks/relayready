@@ -30,8 +30,9 @@ admission or legal asset-transfer review.
 - Prepare Sandbox consideration using the [written thesis](AAIF_SANDBOX_THESIS.md)
   and current [TC lifecycle policy](https://github.com/aaif/technical-committee/blob/main/governance/project-lifecycle-policy.md).
   The owner supplied company/signatory details, attested company authority and
-  authorized the public application and conditional project transfer. Complete
-  the submission; actual LF agreements remain unsigned.
+  authorized the public application and conditional project transfer.
+  [Proposal #44](https://github.com/aaif/project-proposals/issues/44) is submitted;
+  respond to review without claiming admission. Actual LF agreements remain unsigned.
 
 Exit: accessible source, an inspectable release, reproducible checks and a
 publicly recorded review. None of these imply foundation acceptance.

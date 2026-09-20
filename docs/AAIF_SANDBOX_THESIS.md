@@ -1,8 +1,9 @@
 # RelayReady: Sandbox thesis
 
-Draft for AAIF review, 21 September 2026. Requested stage: **Sandbox**.
-Not submitted, admitted, endorsed or donated. This short thesis accompanies the
-[application draft](AAIF_APPLICATION_DRAFT.md); it makes no adoption claim.
+Thesis for AAIF review, 21 September 2026. Requested stage: **Sandbox**.
+Submitted in [proposal #44](https://github.com/aaif/project-proposals/issues/44);
+not admitted, endorsed or donated. This short thesis accompanies the
+[application context](AAIF_APPLICATION_DRAFT.md); it makes no adoption claim.
 
 ## Intended users and problem
 

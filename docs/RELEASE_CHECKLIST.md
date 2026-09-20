@@ -9,7 +9,7 @@ approval, legal clearance or an already completed contribution.
 - [x] Apache-2.0 license, contribution instructions and governance documents.
 - [x] Confirmed project-side role assignments and approved private contact.
 - [x] Public website with clearly labelled simulated workbench.
-- [x] Twelve-month roadmap, pilot protocol and unsubmitted application draft.
+- [x] Twelve-month roadmap, pilot protocol and owner-authorized application.
 - [x] Sandbox thesis and preliminary project-asset inventory.
 - [x] CI/release definitions covering Python, browser checks and exact tag version.
 
@@ -81,13 +81,16 @@ deployment history must remain intact; an import does not retroactively sign it.
 - [x] Obtain explicit submission and documentation-publication authorization,
   including the existing owner DCO sign-off. It does not authorize signatures
   on unseen LF contracts or immediate account transfers.
-- [ ] Publish approved supporting documents through the protected project
+- [x] Publish approved supporting documents through the protected project
   workflow, with appropriate DCO authority, before relying on their public links.
+- [x] Submit [AAIF proposal #44](https://github.com/aaif/project-proposals/issues/44)
+  and verify its public contents match the authorized submission text.
 
-The owner authorized the company details and application documents on 21 September;
-publication is still pending at this checkpoint. They are not part of the linked successful CI
-revision. No foundation issue, outreach message or contribution agreement has
-been sent on the basis of these drafts.
+The supporting documents are public in PR #2; merging into main remains subject
+to the normal review period and protected checks. They are not part of the older
+implementation CI revision cited above. See the [submission record](AAIF_SUBMISSION_RECORD.md).
+No contribution agreement has been signed or transfer performed. Foundation-side
+triage remains unverified; the submitter cannot apply the maintainer-only `New` label.
 
 Foundation review, votes and the contribution agreement are separate external
 steps. Do not label RelayReady donated, contributed or an official AAIF project

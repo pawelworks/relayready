@@ -25,8 +25,9 @@ and the [source-publication record](docs/SOURCE_PUBLICATION_REVIEW.md).
 See the [roadmap](docs/ROADMAP.md), [AAIF application draft](docs/AAIF_APPLICATION_DRAFT.md),
 [Sandbox thesis](docs/AAIF_SANDBOX_THESIS.md) and
 [release checklist](docs/RELEASE_CHECKLIST.md). Sandbox is the proposed entry
-stage, not a status already held. No foundation submission, acceptance,
-endorsement or donation has occurred.
+stage, not a status already held. [AAIF proposal #44](https://github.com/aaif/project-proposals/issues/44)
+has been submitted; no acceptance, endorsement or completed donation has occurred.
+See the [submission record](docs/AAIF_SUBMISSION_RECORD.md).
 
 ## Interactive workbench
 

@@ -1,11 +1,11 @@
 stafeta_readback: "0.1"
-handoff_id: "01M30E0S52Y20MASSZJGDMXZ21"
-created: "2026-09-20T22:12:06Z"
+handoff_id: "01M30G0BT2AFSE59FBHJNCH1PY"
+created: "2026-09-20T22:49:14Z"
 receiver:
   agent: "codex-desktop"
   vendor: "openai"
   model: null
-goal_restated: "Close the protected source-publication workflow, then prepare for external foundation review without confusing verified CI with adoption or institutional acceptance."
+goal_restated: "Close the documentation verification around the submitted Sandbox proposal, then respond to real external review while reserving actual legal signatures and transfers for the authorized parties."
 invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
 invariants_echo:
   - "Never publish artifacts or deploy documentation without owner approval."
@@ -14,8 +14,5 @@ invariants_echo:
 will_not_redo: [1, 2, 3, 4, 5]
 rechecked: []
 conflicts: []
-questions_for_human:
-  - "What public GitHub identity and affiliation should the application list?"
-  - "What country or legal entity details apply to the proposed signatory?"
-  - "Does the owner approve the actual foundation submission and transfer commitments after reviewing them?"
-first_action: "Inspect the publication-record PR and final main CI in GitHub, completing protected checks if necessary before continuing foundation preparation. This readback records the current agent's state, not independent acceptance."
+questions_for_human: []
+first_action: "Inspect PR 2's exact latest revision and hosted checks, completing publication-record verification without bypassing review. This readback records the current agent's state, not independent human acceptance."

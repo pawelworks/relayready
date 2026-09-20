@@ -1,7 +1,8 @@
-# AAIF application working draft
+# AAIF application context
 
 Updated 21 September 2026. Requested stage: **Sandbox**.
-**Owner-authorized for submission; not yet submitted at this checkpoint.**
+**Submitted as [AAIF proposal #44](https://github.com/aaif/project-proposals/issues/44).**
+The historical filename is retained so earlier links continue to resolve.
 This is not a statement that the foundation has approved eligibility or admission.
 The [short technical thesis](AAIF_SANDBOX_THESIS.md) sets out intended users,
 the pre-adoption rationale and evidence that would justify progression.
@@ -68,8 +69,9 @@ The reviewed, corrected source was imported at commit
 `d058b5f984347bb147bf98a5810c7a337ffbea54` with the owner's authorized DCO
 sign-off. [Publication-record PR #1](https://github.com/pawelworks/relayready/pull/1)
 merged under branch protection; its public main revision is
-`c3c91545f6c7584a7f093e8904a7e8d26fc22d1a`. This draft's additional edits are
-local and have not yet been published. No code has been pushed to the personal
+`c3c91545f6c7584a7f093e8904a7e8d26fc22d1a`. The additional supporting documents
+are public in [PR #2](https://github.com/pawelworks/relayready/pull/2), with
+immutable links used in the submitted proposal. No code has been pushed to the personal
 placeholder repository.
 
 ## People, governance and contributions
@@ -175,7 +177,8 @@ Proposed scope boundaries are not agreed exceptions to foundation requirements.
 
 This approval is recorded in the asset inventory; it is an owner declaration,
 not independent rights or registry verification. Actual LF agreements and the
-project technical charter still need separate
-review and signature. The foundation's TC/GB decisions and onboarding are external
-steps. No form has been submitted, agreement signed, transfer performed or
-foundation vote obtained. See [remaining gates](RELEASE_CHECKLIST.md).
+project technical charter still need separate review and signature.
+The foundation's TC/GB decisions and onboarding are external
+steps. The form was submitted at `2026-09-20T22:45:56Z`; no agreement has been
+signed, transfer performed or foundation vote obtained. See the
+[submission record](AAIF_SUBMISSION_RECORD.md) and [remaining gates](RELEASE_CHECKLIST.md).

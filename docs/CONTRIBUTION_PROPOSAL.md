@@ -1,8 +1,9 @@
 # RelayReady contribution proposal
 
 Prepared for technical discussion with the Agentic AI Foundation community.
-Status: public-source donation candidate; no submission, AAIF affiliation, acceptance,
-endorsement, ownership transfer or production adoption is claimed.
+Status: submitted for [AAIF Sandbox consideration](https://github.com/aaif/project-proposals/issues/44);
+no AAIF affiliation, acceptance, endorsement, ownership transfer or production
+adoption is claimed.
 
 ## Offer
 
@@ -116,8 +117,9 @@ be settled with LF; owner submission approval is not an executed legal agreement
 The [foundation charter](https://github.com/aaif/foundation/blob/main/foundation-charter.pdf),
 including section 8 on project trademarks, is part of that review. Any
 contribution agreement and LF technical charter must be reviewed in their
-actual supplied form. At this authorization checkpoint, no application has been
-submitted, agreement signed, account transferred or foundation approval obtained.
+actual supplied form. The application is submitted; no agreement has been signed,
+account transferred or foundation approval obtained. The
+[submission record](AAIF_SUBMISSION_RECORD.md) captures the exact public evidence.
 
 Suggested review request: assess whether this small profile should live as an
 independent reference implementation, an A2A extension experiment, or shared

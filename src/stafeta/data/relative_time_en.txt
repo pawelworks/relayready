@@ -1,0 +1,13 @@
+# Relative-time expressions prohibited in portable task state.
+yesterday
+today
+earlier today
+last week
+last month
+last session
+recently
+just now
+this morning
+this afternoon
+this evening
+

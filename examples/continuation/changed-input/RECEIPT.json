@@ -1,0 +1,18 @@
+{
+  "relayready_receipt": "0.1-draft",
+  "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+  "evaluated_at": "2026-09-20T12:05:00Z",
+  "decision": "recheck",
+  "reasons": [
+    {
+      "code": "run_inputs_changed",
+      "message": "run_inputs entry skill:review@1.2.0 needs rechecking."
+    }
+  ],
+  "bindings": {
+    "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+    "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+    "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+    "observation_sha256": "sha256:e846656f920e79aeaf5eaccc559ecb6162f775ddee1a474dba11b1702f7a49cc"
+  }
+}

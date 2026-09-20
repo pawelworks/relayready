@@ -1,0 +1,27 @@
+stafeta_readback: "0.1"
+handoff_id: "01K5MCT2V8F4JQ6N7R9S0W3XYZ"
+created: "2026-09-20T16:26:50+03:00"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Turn the accepted contract into a deterministic, tested command-line validator without crossing into readback, chain, integration, or benchmark milestones."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo:
+  - 1
+  - 2
+  - 3
+rechecked: []
+conflicts:
+  - "The handoff requested an owner-supplied sanitized real-world conversion; the owner explicitly directed the receiver to create its own example instead."
+questions_for_human:
+  - "What GitHub organization and repository URL should package metadata and repository links use?"
+  - "What private security reporting route should replace the placeholder in `SECURITY.md`?"
+  - "What public handle should identify the current maintainer?"
+  - "Which sanitized real-world handoff should be converted for the M1 acceptance exercise?"
+first_action: "Create a sanitized project handoff example and record its fit findings before implementing M2."
+

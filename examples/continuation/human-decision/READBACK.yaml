@@ -1,0 +1,23 @@
+stafeta_readback: '0.1'
+handoff_id: 01K5M85YQ6E6XM1YSE7YB7A9PG
+created: '2026-09-20T12:01:00Z'
+receiver:
+  agent: demo-receiver
+  vendor: example
+  model: null
+goal_restated: Review the staged change with the execution limits and recovery checks.
+invariants_hash: sha256:d2b36e880b87cc72d73cd92b6447829f98c3a9a91d5e913c27fd0c2e44470bc6
+invariants_echo:
+- Never execute a production database mutation.
+- Never retry an operation with an unknown prior outcome.
+will_not_redo:
+- 1
+rechecked:
+- item: 1
+  result: confirmed
+  note: Simulated revision 42; the gate compares a later observation.
+conflicts: []
+questions_for_human:
+- Does the owner approve a longer staging lock window?
+first_action: Compare the current observations with the checkpoint before continuing
+  the staging review.

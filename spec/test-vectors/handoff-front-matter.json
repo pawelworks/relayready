@@ -1,0 +1,17 @@
+{
+  "stafeta": "0.1",
+  "id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+  "created": "2026-09-20T16:00:00+03:00",
+  "task": "Finish the import fix",
+  "status": "in_progress",
+  "profile": "code",
+  "parent": null,
+  "sender": {
+    "agent": "example-cli",
+    "vendor": "example",
+    "model": null
+  },
+  "recheck_after": "2026-09-27",
+  "lang": "en"
+}
+

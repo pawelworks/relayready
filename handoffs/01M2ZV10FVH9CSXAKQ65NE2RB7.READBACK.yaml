@@ -1,0 +1,24 @@
+stafeta_readback: "0.1"
+handoff_id: "01M2ZV10FVH9CSXAKQ65NE2RB7"
+created: "2026-09-20T16:32:01Z"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Ship the reviewed local experiment app through the registered owner-only website while keeping claims, evidence and contribution authority separate."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2, 3, 4, 5]
+rechecked:
+  - item: 5
+    result: confirmed
+    note: "The existing Site has no saved version at source preparation. An authenticated source connection now succeeds; deployment outcome must be checked through Sites."
+conflicts: []
+questions_for_human:
+  - "What GitHub organization and repository URL should package metadata and repository links use?"
+  - "What private security reporting route should replace the placeholder in `SECURITY.md`?"
+  - "What public handle should identify the current maintainer?"
+first_action: "Publish the committed candidate with the supported private workflow. This records the current agent's source-preparation state, not a separate agent acceptance."

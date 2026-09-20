@@ -1,0 +1,22 @@
+stafeta_readback: "0.1"
+handoff_id: "01M2ZHGGTGMVZ7ZH5TDMVQBHF5"
+created: "2026-09-20T16:54:00+03:00"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Package the accepted handoff and readback behavior for each target harness, using only integration mechanisms verified from current authoritative sources."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2, 3, 4, 5]
+rechecked: []
+conflicts:
+  - "A two-vendor manual relay cannot be performed without external harness sessions; M4 will ship deterministic prompts and label that acceptance exercise pending rather than inventing evidence."
+questions_for_human:
+  - "What GitHub organization and repository URL should package metadata and repository links use?"
+  - "What private security reporting route should replace the placeholder in `SECURITY.md`?"
+  - "What public handle should identify the current maintainer?"
+first_action: "Verify native integration mechanisms from installed help or official documentation."

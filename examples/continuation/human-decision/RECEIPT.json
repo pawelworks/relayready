@@ -1,0 +1,18 @@
+{
+  "relayready_receipt": "0.1-draft",
+  "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+  "evaluated_at": "2026-09-20T12:05:00Z",
+  "decision": "escalate",
+  "reasons": [
+    {
+      "code": "human_questions_open",
+      "message": "Human questions require an answer before continuation."
+    }
+  ],
+  "bindings": {
+    "handoff_sha256": "sha256:d840227ddb65196a9108e9a290419cf0dff4f7ff4274349e94e29783d3007d92",
+    "readback_sha256": "sha256:5f84c6eca516b931734a534c31453253b0e77010f842daa068cc5d55a54b60d5",
+    "checkpoint_sha256": "sha256:57c3ead657dfb43f247373b283ead33a57f7b96f9f48d7f665647d983e7c25a1",
+    "observation_sha256": "sha256:2c541cdf3edfa5647ea10d9fe248ce0aa8bf4e87f6996f1cf2f84594eddc8a1e"
+  }
+}

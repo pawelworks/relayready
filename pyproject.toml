@@ -1,0 +1,76 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "relayready"
+version = "0.1.3.dev0"
+description = "Checked handoffs for unfinished work moving between AI agent harnesses."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "The RelayReady Authors" }]
+maintainers = [{ name = "Pavel Mihai Lucian", email = "lucian.pavel@pawelworks.com" }]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Typing :: Typed",
+]
+dependencies = [
+  "jsonschema>=4.23,<5",
+  "pyyaml>=6,<7",
+  "rfc3339-validator>=0.1.4,<0.2",
+]
+
+[project.scripts]
+relayready = "stafeta.cli:main"
+stafeta = "stafeta.cli:main"
+
+[project.urls]
+Homepage = "https://relayready.pavel752770.chatgpt.site/"
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2,<2",
+  "jsonschema>=4.23,<5",
+  "mkdocs>=1.6,<2",
+  "mypy>=1.11,<2",
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "pyyaml>=6,<7",
+  "ruff>=0.11,<1",
+  "types-jsonschema>=4.23,<5",
+  "types-pyyaml>=6,<7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stafeta", "src/relayready"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src", "/spec", "/tests", "/tools", "/docs", "/examples", "/integrations",
+  "/bench", "/out", "/handoffs", "/.github", "/README.md", "/LICENSE", "/NOTICE",
+  "/GOVERNANCE.md", "/CONTRIBUTING.md", "/CODE_OF_CONDUCT.md", "/SECURITY.md",
+  "/MAINTAINERS.md", "/THIRD_PARTY_LICENSES.md", "/CHANGELOG.md", "/pyproject.toml",
+  "/mkdocs.yml", "/AGENTS.md", "/HANDOFF.md", "/READBACK.yaml", "/.gitattributes",
+  "/.gitignore",
+]
+exclude = ["**/__pycache__", "*.pyc", "/bench/results"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=stafeta.rules --cov-report=term-missing --cov-fail-under=90"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests", "tools"]

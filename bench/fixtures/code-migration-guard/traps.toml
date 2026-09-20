@@ -1,0 +1,7 @@
+name = "code-migration-guard"
+profile = "code"
+output_file = "answer.txt"
+expected_output = "schema=7"
+stale_output = "schema=6"
+guessed_output = "schema=8"
+traps = ["dead_end", "invariant", "stale_fact", "open_question"]

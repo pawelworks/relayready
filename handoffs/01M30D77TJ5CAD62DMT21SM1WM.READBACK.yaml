@@ -1,0 +1,25 @@
+stafeta_readback: "0.1"
+handoff_id: "01M30D77TJ5CAD62DMT21SM1WM"
+created: "2026-09-20T21:58:09Z"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Move the verified local candidate toward public inspection only after the owner certifies contribution rights, then obtain real CI evidence before requesting foundation review."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2, 3, 4, 5]
+rechecked:
+  - item: 5
+    result: confirmed
+    note: "GitHub API confirms the intended public repository is still empty and grants admin access. Private vulnerability reporting was verified during its creation; no source push occurred."
+conflicts: []
+questions_for_human:
+  - "Does the owner certify the right to contribute the reviewed source under Apache-2.0 and authorize a permanent public DCO sign-off using the approved name and email?"
+  - "What public GitHub identity and affiliation should the application list?"
+  - "What country or legal entity details apply to the proposed signatory?"
+  - "Does the owner approve the actual foundation submission and transfer commitments after reviewing them?"
+first_action: "Request the owner's specific contribution-rights attestation for the corrected candidate before creating a signed-off public import. This readback records the current agent's state, not independent acceptance."

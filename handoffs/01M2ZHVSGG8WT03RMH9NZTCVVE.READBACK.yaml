@@ -1,0 +1,22 @@
+stafeta_readback: "0.1"
+handoff_id: "01M2ZHVSGG8WT03RMH9NZTCVVE"
+created: "2026-09-20T17:01:00+03:00"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Implement a deterministic five-fixture Relay Bench whose scripted mock runner proves that each required relay failure is measured without publishing synthetic results."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2]
+rechecked: []
+conflicts:
+  - "Real harness runs are an owner gate; M5 will run only the zero-cost deterministic mock and keep mock data out of the public matrix."
+questions_for_human:
+  - "What GitHub organization and repository URL should package metadata and repository links use?"
+  - "What private security reporting route should replace the placeholder in `SECURITY.md`?"
+  - "What public handle should identify the current maintainer?"
+first_action: "Define the result schema, fixture trap contract, and mock behavior grading loop before creating fixtures."

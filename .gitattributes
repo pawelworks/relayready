@@ -1,0 +1,9 @@
+# The experimental receipts bind exact bytes. Keep fixtures stable across platforms.
+examples/continuation/** text eol=lf
+out/demo-fixtures.json text eol=lf
+# S013 pins this document's exact bytes, including on Windows checkouts.
+docs/BUILD_BRIEF.md text eol=lf
+# Issued handoff archives must retain their original LF bytes.
+HANDOFF.md text eol=lf
+READBACK.yaml text eol=lf
+handoffs/** text eol=lf

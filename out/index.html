@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RelayReady — Ready for the next agent</title>
+  <meta name="description" content="Portable agent handoffs and an experimental Continuation Gate: inspect the evidence, check what changed, and record the next decision.">
+  <link rel="icon" type="image/png" href="relayready-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#relay-lab">Skip to relay lab</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="RelayReady home"><img class="brand-logo" src="relayready-logo.png" alt="" width="44" height="44"><span>RelayReady</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="workbench.html">Open workbench</a>
+      <a href="#protocol">Protocol</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#evidence">Evidence</a>
+    </nav>
+    <span class="version">SPEC 0.1</span>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">OPEN HANDOFF CONTRACT · EXPERIMENTAL CONTINUATION GATE</p>
+        <h1 id="hero-title">Ready for<br><em>the next agent.</em></h1>
+        <p class="lede">A handoff says where work stopped. RelayReady checks the receiver’s readback and records whether the declared state supports resuming, rechecking, or escalating.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="workbench.html">Open the workbench</a>
+          <a class="button ghost" href="#protocol">Read the protocol</a>
+        </div>
+      </div>
+      <aside class="brief-card" aria-label="RelayReady contract summary">
+        <div class="brief-head"><span>CONTINUATION GATE</span><span class="status-chip">0.1-DRAFT</span></div>
+        <dl>
+          <div><dt>01</dt><dd>Write an immutable <code>HANDOFF.md</code></dd></div>
+          <div><dt>02</dt><dd>Require a structured receiver readback</dd></div>
+          <div><dt>03</dt><dd>Check revisions, pinned inputs and uncertain effects</dd></div>
+          <div><dt>04</dt><dd>Record a decision bound to the exact inputs</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="lab" id="relay-lab" aria-labelledby="lab-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">INTERACTIVE DEMONSTRATION</p><h2 id="lab-title">Does this work<br>resume?</h2></div>
+        <p>Simulated observations · recorded local validator results. Explore how a changed revision or uncertain effect changes the decision.</p>
+      </div>
+      <div class="lab-shell">
+        <div class="lab-toolbar">
+          <label for="scenario">Scenario</label>
+          <select id="scenario" aria-describedby="scenarioSummary" disabled>
+            <option value="">Loading recorded scenarios…</option>
+          </select>
+          <button class="run-button" id="runRelay" type="button" disabled><span aria-hidden="true">▶</span> Run relay</button>
+          <button class="reset-button" id="resetRelay" type="button" disabled>Reset</button>
+        </div>
+        <p class="scenario-summary" id="scenarioSummary" role="status">Loading the inspectable demonstration fixtures.</p>
+
+        <div class="relay-stage" aria-live="polite">
+          <article class="agent-card active" data-agent="sender">
+            <div class="agent-top"><span class="agent-id">A</span><div><strong>Sender</strong><span>coding harness</span></div><span class="agent-state">READY</span></div>
+            <div class="agent-task">Issues the handoff and expectations</div>
+          </article>
+          <div class="relay-line" aria-hidden="true"><span class="packet">HANDOFF</span></div>
+          <article class="agent-card" data-agent="receiver">
+            <div class="agent-top"><span class="agent-id">B</span><div><strong>Receiver</strong><span>fresh harness</span></div><span class="agent-state">WAITING</span></div>
+            <div class="agent-task">Reads back and records observations</div>
+          </article>
+        </div>
+
+        <div class="lab-grid">
+          <div class="timeline-panel">
+            <div class="panel-title"><span>RELAY EVENTS</span><span id="elapsed">STEP 0 / 4</span></div>
+            <ol class="timeline" id="timeline">
+              <li class="current"><span>01</span><div><strong>Sender prepares the handoff</strong><small>Issued task state and expectations.</small></div></li>
+              <li><span>02</span><div><strong>Receiver produces a readback</strong><small>Invariants, stale facts and open questions.</small></div></li>
+              <li><span>03</span><div><strong>Compare the observations</strong><small>Checkpoint binds the readback, then observations are checked.</small></div></li>
+              <li><span>04</span><div><strong>Inspect the recorded decision</strong><small>The local validator’s receipt and reasons.</small></div></li>
+            </ol>
+          </div>
+          <div class="inspection-panel">
+            <div class="panel-title"><span>RECORDED VALIDATION</span><span id="validationState" class="pending">PENDING</span></div>
+            <div class="score"><span id="scoreValue">—</span><small id="scoreLabel">waiting for replay</small></div>
+            <ul class="checks" id="checks">
+              <li><span>○</span> Handoff and readback artifacts</li>
+              <li><span>○</span> Checkpoint and expected revisions</li>
+              <li><span>○</span> Observed inputs and effect status</li>
+              <li><span>○</span> Decision and input bindings</li>
+            </ul>
+          </div>
+        </div>
+        <div class="decision-panel" id="decisionPanel" role="status" aria-live="polite" aria-atomic="true">
+          <div class="decision-heading"><span class="decision-mark" aria-hidden="true">↗</span><div><p class="eyebrow">EXPERIMENTAL PROFILE · 0.1-DRAFT</p><h3 id="decisionTitle">One handoff. Three possible decisions.</h3></div></div>
+          <p id="decisionSummary">Resume when declared checks are consistent, recheck changed state, or escalate uncertainty that needs a decision.</p>
+          <ul id="decisionReasons" class="decision-reasons"></ul>
+        </div>
+        <div class="artifact-panel">
+          <div class="artifact-head">
+            <div class="artifact-tabs" role="tablist" aria-label="Relay artifact">
+              <button id="tab-handoff" role="tab" aria-selected="true" aria-controls="artifactCode" data-tab="handoff" type="button">Handoff</button>
+              <button id="tab-readback" role="tab" aria-selected="false" aria-controls="artifactCode" data-tab="readback" type="button" tabindex="-1">Readback</button>
+              <button id="tab-checkpoint" role="tab" aria-selected="false" aria-controls="artifactCode" data-tab="checkpoint" type="button" tabindex="-1">Checkpoint</button>
+              <button id="tab-observation" role="tab" aria-selected="false" aria-controls="artifactCode" data-tab="observation" type="button" tabindex="-1">Observation</button>
+              <button id="tab-receipt" role="tab" aria-selected="false" aria-controls="artifactCode" data-tab="receipt" type="button" tabindex="-1">Receipt</button>
+            </div>
+            <button class="copy-button" id="copyArtifact" type="button" disabled>Copy artifact</button>
+          </div>
+          <p id="artifactMeta" class="artifact-meta">Recorded artifact inspector</p>
+          <pre id="artifactCode" tabindex="0" role="tabpanel" aria-labelledby="tab-handoff"><code>Loading recorded artifacts…</code></pre>
+        </div>
+        <p class="lab-boundary">The receipt binds exact artifact bytes and observations. Authorization and conditional writes remain with the executor. This browser replays saved Python validator output; it does not run a model, invoke tools, or execute the Python validator.</p>
+      </div>
+      <noscript><p class="boundary-note">JavaScript is needed for the replay. You can still <a href="demo-fixtures.json">inspect all demonstration artifacts and recorded receipts</a>.</p></noscript>
+    </section>
+
+    <section id="continuation-gate" class="gate-section" aria-labelledby="gate-title">
+      <div class="section-heading wide">
+        <div><p class="eyebrow">PROPOSED OPEN CONTRIBUTION</p><h2 id="gate-title">Make the checkpoint<br>reviewable.</h2></div>
+        <p>The experimental Continuation Gate adds a small sidecar to the frozen 0.1 handoff contract: declared expectations, receiver observations and a reproducible receipt.</p>
+      </div>
+      <div class="gate-grid">
+        <article><span class="gate-number">01 / BIND</span><h3>Receipts bound to bytes</h3><p>SHA-256 bindings identify the exact handoff, readback, checkpoint and observation used for a recorded decision.</p></article>
+        <article><span class="gate-number">02 / COMPARE</span><h3>Revision checks</h3><p>Compare the expected resource revision with what the receiver observed. A mismatch requests a recheck before continuation.</p></article>
+        <article><span class="gate-number">03 / PIN</span><h3>Pinned inputs</h3><p>Record digests for relevant inputs, including skill or instruction artifacts. A matching version label alone does not establish unchanged bytes.</p></article>
+        <article><span class="gate-number">04 / ESCALATE</span><h3>Uncertain effects</h3><p>If the outcome of an earlier side effect is unknown, escalate it. The executor must establish what happened before considering a retry.</p></article>
+      </div>
+      <div class="gate-decisions" aria-label="Continuation decisions"><span><i class="decision-dot resume-dot"></i><strong>Resume</strong> consistent declarations</span><span><i class="decision-dot recheck-dot"></i><strong>Recheck</strong> state needs review</span><span><i class="decision-dot escalate-dot"></i><strong>Escalate</strong> a decision is required</span></div>
+      <p class="proposal-note">An executable contribution candidate for discussion and review. A receipt records mechanical consistency, not semantic understanding or permission to act.</p>
+    </section>
+
+    <section id="protocol" class="protocol-section" aria-labelledby="protocol-title">
+      <div class="section-heading wide">
+        <div><p class="eyebrow">PROTOCOL</p><h2 id="protocol-title">The contract travels.<br>Private sessions do not.</h2></div>
+        <p>RelayReady transfers the minimum inspectable task state. It does not scrape vendor session stores, orchestrate agents, or call a model during validation.</p>
+      </div>
+      <div class="protocol-flow" aria-label="Four-stage RelayReady protocol">
+        <article><span>01</span><div><small>SENDER</small><h3>Write</h3><p>Capture goal, state, constraints and unresolved decisions.</p></div></article>
+        <article><span>02</span><div><small>ARTIFACT</small><h3>Issue</h3><p>Make the handoff immutable and link successors by ID.</p></div></article>
+        <article><span>03</span><div><small>RECEIVER</small><h3>Read back</h3><p>Echo invariants, recheck stale facts and surface conflicts.</p></div></article>
+        <article><span>04</span><div><small>VALIDATOR</small><h3>Check</h3><p>Report mechanical acknowledgements; the draft gate adds a continuation decision.</p></div></article>
+      </div>
+      <div class="contract-grid">
+        <article><span class="contract-icon">≡</span><h3>Invariants</h3><p>Standing rules are hashed, echoed verbatim and inherited across a chain.</p></article>
+        <article><span class="contract-icon">↻</span><h3>Stale facts</h3><p>Time-sensitive state is explicitly rechecked instead of silently trusted.</p></article>
+        <article><span class="contract-icon">×</span><h3>Dead ends</h3><p>Rejected approaches travel with their reasons so the next agent does not repeat them.</p></article>
+        <article><span class="contract-icon">?</span><h3>Human questions</h3><p>Decisions requiring judgment remain visible; the receiver may not guess them.</p></article>
+      </div>
+    </section>
+
+    <section class="architecture-section" aria-labelledby="architecture-title">
+      <div class="architecture-copy">
+        <p class="eyebrow">ARCHITECTURE</p>
+        <h2 id="architecture-title">A small protocol between large systems.</h2>
+        <p>RelayReady sits at the boundary between harnesses. The local core checks the 0.1 handoff contract. The experimental gate consumes a checkpoint and observations to produce a decision receipt.</p>
+        <ul class="principles">
+          <li><span>01</span><div><strong>Vendor-neutral</strong><small>Harness and model identities stay separate.</small></div></li>
+          <li><span>02</span><div><strong>Local by default</strong><small>Lint, readback and chain checks make no network calls.</small></div></li>
+          <li><span>03</span><div><strong>Evidence-bounded</strong><small>Missing results remain “not run,” never estimates.</small></div></li>
+        </ul>
+      </div>
+      <div class="architecture-map" aria-label="RelayReady architecture diagram">
+        <div class="map-node harness"><span>HARNESS A</span><strong>Sender agent</strong></div>
+        <div class="map-bridge"><span>HANDOFF.md</span><i></i><span>READBACK.yaml</span></div>
+        <div class="map-node core"><span>RELAYREADY CORE + DRAFT GATE</span><strong>Contract · Checkpoint · Observation</strong><small>deterministic / local</small></div>
+        <div class="map-bridge reverse"><span>BOUND RECEIPT</span><i></i><span>RESUME / RECHECK / ESCALATE</span></div>
+        <div class="map-node harness"><span>HARNESS B</span><strong>Receiver agent</strong></div>
+      </div>
+    </section>
+
+    <section id="ecosystem" class="ecosystem-section" aria-labelledby="ecosystem-title">
+      <div class="section-heading wide">
+        <div><p class="eyebrow">COMPLEMENTARY LAYER</p><h2 id="ecosystem-title">A shared checkpoint<br>before work resumes.</h2></div>
+        <p>Conference discussions of durable delegation, versioned skills and recoverable effects point toward a useful contribution: reusable checks and portable test cases for the continuation boundary.</p>
+      </div>
+      <div class="ecosystem-stack" aria-label="RelayReady position in the agent ecosystem">
+        <article><span>01</span><div><small>DELEGATE</small><h3>A2A &amp; workflow engines</h3><p>Assign work and own transitions.</p></div></article>
+        <article class="relay-layer"><span>02</span><div><small>CHECK</small><h3>RelayReady</h3><p>Bind artifacts, compare observations, record a decision.</p></div></article>
+        <article><span>03</span><div><small>EXECUTE</small><h3>MCP &amp; tool protocols</h3><p>Expose bounded capabilities.</p></div></article>
+        <article><span>04</span><div><small>AUTHORIZE</small><h3>Identity &amp; policy</h3><p>Decide who may perform each action.</p></div></article>
+        <article><span>05</span><div><small>PERSIST</small><h3>Resources &amp; filesystems</h3><p>Store artifacts with lifecycle and revision rules.</p></div></article>
+      </div>
+      <div class="opportunity-grid">
+        <article><span>PROFILE</span><h3>Continuation conformance</h3><p>An experimental profile and reference validator that different harnesses can exercise against shared fixtures.</p></article>
+        <article><span>RESOURCE</span><h3>Portable artifact pattern</h3><p>Store <code>HANDOFF.md</code> and <code>READBACK.yaml</code> in any resource system that supports revision-aware writes.</p></article>
+        <article><span>POLICY</span><h3>Executor-owned authority</h3><p>The receipt informs continuation. Identity checks, permissions, freshness and conditional execution remain with the surrounding system.</p></article>
+        <article><span>EVAL</span><h3>Deterministic test vectors</h3><p>Exercise unchanged state, revision drift, changed inputs, unknown effects and unresolved human decisions.</p></article>
+      </div>
+      <p class="proposal-note">Inspired by shared engineering patterns; no exclusive novelty, standards-body affiliation, adoption or endorsement is claimed.</p>
+    </section>
+
+    <section class="integrations-section" aria-labelledby="integrations-title">
+      <div class="section-heading wide">
+        <div><p class="eyebrow">PORTABLE INTEGRATIONS</p><h2 id="integrations-title">One contract. Native instructions.</h2></div>
+        <p>The same L1 Writer and L2 Reader behavior is packaged for each harness’s documented extension mechanism.</p>
+      </div>
+      <div class="integration-list">
+        <article><span class="integration-letter">CX</span><div><h3>Codex</h3><p>Project skill</p></div><code>SKILL.md</code></article>
+        <article><span class="integration-letter">CC</span><div><h3>Claude Code</h3><p>Project skill</p></div><code>SKILL.md</code></article>
+        <article><span class="integration-letter">KI</span><div><h3>Kimi Code</h3><p>Project skill</p></div><code>SKILL.md</code></article>
+        <article><span class="integration-letter">GO</span><div><h3>goose</h3><p>Project recipe</p></div><code>relayready.yaml</code></article>
+      </div>
+      <p class="boundary-note">Packaging follows documented native formats. Live cross-vendor relay acceptance remains an explicit owner-run gate.</p>
+    </section>
+
+    <section id="evidence" class="evidence-section" aria-labelledby="evidence-title">
+      <div class="evidence-intro">
+        <p class="eyebrow">LOCAL BUILD EVIDENCE</p>
+        <h2 id="evidence-title">Claims stay attached to inspectable results.</h2>
+        <p>Every result in the control room comes from a recorded local validator receipt, paired with its exact demonstration inputs. Inspect the artifacts before interpreting a decision.</p>
+      </div>
+      <div class="evidence-metrics">
+        <article><strong class="evidence-word">Inputs</strong><span>Inspect the declarations</span><small>handoff, readback and sidecars</small></article>
+        <article><strong class="evidence-word">Receipt</strong><span>Inspect the decision</span><small>reason codes and SHA-256 bindings</small></article>
+        <article><strong class="evidence-word">Replay</strong><span>Compare the scenarios</span><small><a href="demo-fixtures.json">Open the recorded fixtures ↗</a></small></article>
+      </div>
+      <div class="evidence-boundary">
+        <span>NOT YET CLAIMED</span>
+        <ul><li>Production adoption</li><li>Real-runner advantage</li><li>Live two-vendor acceptance</li></ul>
+      </div>
+    </section>
+
+    <section class="compatibility-section" aria-labelledby="compatibility-title">
+      <div>
+        <p class="eyebrow">0.1 COMPATIBILITY</p>
+        <h2 id="compatibility-title">A new name without a broken contract.</h2>
+        <p>The public product is RelayReady. The accepted serialization keeps its original field names so existing handoffs remain valid. The Continuation Gate is an additional experimental profile, not a change to the frozen 0.1 wire format.</p>
+      </div>
+      <div class="compatibility-code">
+        <div><span>PRIMARY CLI</span><code>relayready lint HANDOFF.md</code></div>
+        <div><span>LEGACY ALIAS</span><code>stafeta lint HANDOFF.md</code></div>
+        <div><span>FROZEN WIRE KEYS</span><code>stafeta · stafeta_readback</code></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a class="brand" href="#top"><img class="brand-logo" src="relayready-logo.png" alt="" width="44" height="44"><span>RelayReady</span></a>
+    <p>Portable handoffs. Inspectable observations. Recorded continuation decisions.</p>
+    <div><span>Core specification 0.1</span><span>Continuation Gate 0.1-draft</span><span>Apache-2.0 · Early project</span></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

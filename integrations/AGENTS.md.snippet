@@ -1,0 +1,14 @@
+## RelayReady protocol
+
+At session start, if `HANDOFF.md` exists:
+
+1. Read it before changing files or acting on the task.
+2. Produce the RelayReady 0.1 readback described by `relayready schema readback`.
+3. If the `relayready` CLI is available, run `relayready readback check HANDOFF.md READBACK.yaml`.
+4. Show the complete readback to the human. Do not continue the task until the human says to proceed.
+5. Treat invariants as verbatim constraints. Recheck every stale fact and ask every human-only open question.
+
+Before ending a session with unfinished work, create or update `HANDOFF.md` as an
+L1 Writer. Preserve inherited invariants and rejected approaches, then run
+`relayready lint HANDOFF.md --check-pointers` when the CLI is available. Never claim
+a check ran when it did not.

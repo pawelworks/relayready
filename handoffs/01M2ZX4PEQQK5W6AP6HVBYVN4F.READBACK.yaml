@@ -1,0 +1,25 @@
+stafeta_readback: "0.1"
+handoff_id: "01M2ZX4PEQQK5W6AP6HVBYVN4F"
+created: "2026-09-20T17:20:16Z"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Prepare a truthful, reviewable open-source candidate at the chosen GitHub destination, while leaving identity verification and legal commitments with the owner."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2, 3, 4, 5]
+rechecked:
+  - item: 4
+    result: confirmed
+    note: "GitHub lookups returned not found for pawelworks and its intended repository. The owner requested account creation; account type and any required verification remain unresolved."
+conflicts: []
+questions_for_human:
+  - "Should pawelworks be an organization under the existing login or a separate personal account?"
+  - "What public GitHub identity and affiliation should the application list?"
+  - "What country or legal entity details apply to the proposed signatory?"
+  - "Does the owner attest contribution rights and approve the actual submission and transfer commitments?"
+first_action: "Resume from the pending account-type choice; do not publish to the personal placeholder. This readback records the current agent's state, not independent acceptance."

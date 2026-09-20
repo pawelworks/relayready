@@ -1,0 +1,25 @@
+name: Rule proposal
+description: Propose a deterministic lint rule or a change to one.
+title: "[Rule]: "
+labels: [rule]
+body:
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure the rule catches
+    validations:
+      required: true
+  - type: textarea
+    id: detection
+    attributes:
+      label: Deterministic detection
+      description: Explain inputs, finding level, and line reporting.
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: False positives and false negatives
+    validations:
+      required: true
+

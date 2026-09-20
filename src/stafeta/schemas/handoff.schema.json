@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stafeta:schema:handoff:0.1",
+  "title": "RelayReady 0.1 handoff front matter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stafeta",
+    "id",
+    "created",
+    "task",
+    "status",
+    "profile",
+    "parent",
+    "sender",
+    "lang"
+  ],
+  "properties": {
+    "stafeta": { "const": "0.1" },
+    "id": { "$ref": "#/$defs/ulid" },
+    "created": { "$ref": "#/$defs/dateTimeWithOffset" },
+    "task": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "status": {
+      "enum": ["in_progress", "blocked", "ready_for_review", "done"]
+    },
+    "profile": { "enum": ["code", "knowledge"] },
+    "parent": {
+      "oneOf": [
+        { "$ref": "#/$defs/ulid" },
+        { "type": "null" }
+      ]
+    },
+    "sender": { "$ref": "#/$defs/identity" },
+    "recheck_after": { "type": "string", "format": "date" },
+    "lang": {
+      "type": "string",
+      "pattern": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$"
+    }
+  },
+  "$defs": {
+    "ulid": {
+      "type": "string",
+      "pattern": "^[0-7][0-9A-HJKMNP-TV-Z]{25}$"
+    },
+    "dateTimeWithOffset": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent", "vendor"],
+      "properties": {
+        "agent": { "type": "string", "minLength": 1 },
+        "vendor": { "type": "string", "minLength": 1 },
+        "model": {
+          "oneOf": [
+            { "type": "string", "minLength": 1 },
+            { "type": "null" }
+          ]
+        },
+        "operator": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

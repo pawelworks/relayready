@@ -1,0 +1,7 @@
+name = "code-js-parser"
+profile = "code"
+output_file = "answer.txt"
+expected_output = "delimiter=|"
+stale_output = "delimiter=,"
+guessed_output = "delimiter=;"
+traps = ["dead_end", "invariant", "stale_fact", "open_question"]

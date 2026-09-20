@@ -1,0 +1,49 @@
+[runners.mock]
+enabled = true
+version = "1"
+model = ""
+kind = "scripted"
+command = []
+stdin_file = ""
+help_verified = true
+verification = "Built-in deterministic runner; no external CLI."
+
+[runners.codex-cli]
+enabled = false
+version = "0.155.0-alpha.9"
+model = ""
+kind = "external"
+command = ["codex", "exec", "-C", "{working_dir}", "-"]
+stdin_file = "{prompt_file}"
+help_verified = true
+verification = "Verified with `codex --version` and `codex exec --help` on 2026-09-20."
+
+[runners.claude-code]
+enabled = false
+version = "2.1.241"
+model = ""
+kind = "external"
+command = ["claude", "-p", "--add-dir", "{working_dir}"]
+stdin_file = "{prompt_file}"
+help_verified = true
+verification = "Verified with `claude --version` and `claude -p --help` on 2026-09-20."
+
+[runners.goose]
+enabled = false
+version = ""
+model = ""
+kind = "external"
+command = []
+stdin_file = "{prompt_file}"
+help_verified = false
+verification = "Binary absent on 2026-09-20; command intentionally omitted until its own `--help` is checked."
+
+[runners.kimi-cli]
+enabled = false
+version = ""
+model = ""
+kind = "external"
+command = []
+stdin_file = "{prompt_file}"
+help_verified = false
+verification = "Binary absent on 2026-09-20; command intentionally omitted until its own `--help` is checked."

@@ -1,0 +1,30 @@
+{
+  "relayready_checkpoint": "0.1-draft",
+  "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+  "created": "2026-09-20T12:02:00Z",
+  "expires_at": "2026-09-20T13:00:00Z",
+  "handoff_sha256": "sha256:d840227ddb65196a9108e9a290419cf0dff4f7ff4274349e94e29783d3007d92",
+  "readback_sha256": "sha256:5f84c6eca516b931734a534c31453253b0e77010f842daa068cc5d55a54b60d5",
+  "resources": [
+    {
+      "id": "urn:demo:staging-db",
+      "revision": "42"
+    }
+  ],
+  "effects": [
+    {
+      "id": "staging-review-attempt",
+      "idempotency_key": "demo-attempt-001"
+    }
+  ],
+  "run_inputs": [
+    {
+      "name": "skill:review@1.2.0",
+      "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+    },
+    {
+      "name": "policy:staging-review",
+      "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+version: "1.0.0"
+title: "RelayReady"
+description: "Resume or pause unfinished work using a checked RelayReady handoff."
+instructions: |
+  If HANDOFF.md exists at session start, read it before any task action. Produce
+  READBACK.yaml using the RelayReady 0.1 readback schema. Restate the goal, echo all
+  invariants verbatim and in order, identify each rejected approach by one-based
+  index, recheck stale facts, and surface all human-only questions. If the
+  RelayReady CLI is available, run:
+
+    relayready readback check HANDOFF.md READBACK.yaml
+
+  Show the complete readback and wait for the human to approve continuation.
+
+  Before ending unfinished work, create or update HANDOFF.md, preserve inherited
+  invariants and rejected approaches, and run when available:
+
+    relayready lint HANDOFF.md --check-pointers
+
+  Never claim a check ran when it did not.
+prompt: "Apply the RelayReady protocol to the current project."
+extensions: []

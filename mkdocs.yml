@@ -1,0 +1,28 @@
+site_name: RelayReady
+site_description: Checked handoffs for unfinished work moving between AI agent harnesses.
+docs_dir: docs
+site_dir: site
+strict: true
+nav:
+  - Home: index.md
+  - Specification: specification.md
+  - CLI core: CLI.md
+  - Continuation Gate (draft): CONTINUATION_GATE.md
+  - Interactive workbench: WORKBENCH.md
+  - Product research: PRODUCT_RESEARCH.md
+  - Brand asset: BRAND.md
+  - Contribution proposal: CONTRIBUTION_PROPOSAL.md
+  - AAIF application (unsubmitted): AAIF_APPLICATION_DRAFT.md
+  - Roadmap: ROADMAP.md
+  - Live pilot (proposed): PILOT_PROTOCOL.md
+  - Release and submission gates: RELEASE_CHECKLIST.md
+  - Source publication review: SOURCE_PUBLICATION_REVIEW.md
+  - Integration profile: INTEGRATION_PROFILE.md
+  - Candidate verification: VERIFICATION.md
+  - Lint rules: rules/index.md
+  - Build brief: BUILD_BRIEF.md
+  - Decisions: DECISIONS.md
+  - M1 handoff audit: M1_AUDIT.md
+  - M1 acceptance exercise: M1_EXERCISE.md
+  - Starter issues: STARTER_ISSUES.md
+  - Relay matrix: matrix.md

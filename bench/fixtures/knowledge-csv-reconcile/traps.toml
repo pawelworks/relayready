@@ -1,0 +1,7 @@
+name = "knowledge-csv-reconcile"
+profile = "knowledge"
+output_file = "report.md"
+expected_output = "total=42"
+stale_output = "total=40"
+guessed_output = "total=41"
+traps = ["dead_end", "invariant", "stale_fact", "open_question"]

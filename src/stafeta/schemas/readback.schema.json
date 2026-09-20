@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stafeta:schema:readback:0.1",
+  "title": "RelayReady 0.1 readback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stafeta_readback",
+    "handoff_id",
+    "created",
+    "receiver",
+    "goal_restated",
+    "invariants_hash",
+    "invariants_echo",
+    "will_not_redo",
+    "rechecked",
+    "conflicts",
+    "questions_for_human",
+    "first_action"
+  ],
+  "properties": {
+    "stafeta_readback": { "const": "0.1" },
+    "handoff_id": { "$ref": "#/$defs/ulid" },
+    "created": { "$ref": "#/$defs/dateTimeWithOffset" },
+    "receiver": { "$ref": "#/$defs/identity" },
+    "goal_restated": { "type": "string", "minLength": 1 },
+    "invariants_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "invariants_echo": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "will_not_redo": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1 },
+      "uniqueItems": true
+    },
+    "rechecked": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/recheck" }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "questions_for_human": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "first_action": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "ulid": {
+      "type": "string",
+      "pattern": "^[0-7][0-9A-HJKMNP-TV-Z]{25}$"
+    },
+    "dateTimeWithOffset": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent", "vendor"],
+      "properties": {
+        "agent": { "type": "string", "minLength": 1 },
+        "vendor": { "type": "string", "minLength": 1 },
+        "model": {
+          "oneOf": [
+            { "type": "string", "minLength": 1 },
+            { "type": "null" }
+          ]
+        },
+        "operator": { "type": "string", "minLength": 1 }
+      }
+    },
+    "recheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item", "result", "note"],
+      "properties": {
+        "item": { "type": "integer", "minimum": 1 },
+        "result": {
+          "enum": ["confirmed", "changed", "could_not_verify"]
+        },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

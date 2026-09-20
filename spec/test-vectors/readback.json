@@ -1,0 +1,18 @@
+{
+  "stafeta_readback": "0.1",
+  "handoff_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+  "created": "2026-09-20T16:05:00+03:00",
+  "receiver": {
+    "agent": "other-cli",
+    "vendor": "other",
+    "model": null
+  },
+  "goal_restated": "Repair the row parser while preserving the current schema.",
+  "invariants_hash": "sha256:f3ef86e95eb441cb51d2f99602ab322f6accb1c6e875e934457851518e552527",
+  "invariants_echo": ["Never run deploy scripts."],
+  "will_not_redo": [1],
+  "rechecked": [],
+  "conflicts": [],
+  "questions_for_human": [],
+  "first_action": "Inspect the failing regression test and row parser."
+}

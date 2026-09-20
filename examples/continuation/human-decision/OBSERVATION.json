@@ -1,0 +1,28 @@
+{
+  "relayready_observation": "0.1-draft",
+  "checkpoint_sha256": "sha256:57c3ead657dfb43f247373b283ead33a57f7b96f9f48d7f665647d983e7c25a1",
+  "observed_at": "2026-09-20T12:04:00Z",
+  "resources": [
+    {
+      "id": "urn:demo:staging-db",
+      "revision": "42"
+    }
+  ],
+  "effects": [
+    {
+      "id": "staging-review-attempt",
+      "status": "not_applied",
+      "evidence": "urn:demo:reconciliation:no-write-observed"
+    }
+  ],
+  "run_inputs": [
+    {
+      "name": "skill:review@1.2.0",
+      "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+    },
+    {
+      "name": "policy:staging-review",
+      "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+    }
+  ]
+}

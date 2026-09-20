@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:relayready:schema:observation:0.1-draft",
+  "title": "RelayReady experimental supplied continuation observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["relayready_observation", "checkpoint_sha256", "observed_at", "resources", "effects", "run_inputs"],
+  "properties": {
+    "relayready_observation": {"const": "0.1-draft"},
+    "checkpoint_sha256": {"$ref": "#/$defs/digest"},
+    "observed_at": {"type": "string", "format": "date-time", "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"},
+    "resources": {"type": "array", "items": {"$ref": "#/$defs/resource"}, "uniqueItems": true},
+    "effects": {"type": "array", "items": {"$ref": "#/$defs/effect"}, "uniqueItems": true},
+    "run_inputs": {"type": "array", "items": {"$ref": "#/$defs/input"}, "uniqueItems": true}
+  },
+  "$defs": {
+    "text": {"type": "string", "pattern": "\\S"},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "resource": {
+      "type": "object", "additionalProperties": false, "required": ["id", "revision"],
+      "properties": {"id": {"$ref": "#/$defs/text"}, "revision": {"anyOf": [{"$ref": "#/$defs/text"}, {"type": "null"}]}}
+    },
+    "effect": {
+      "type": "object", "additionalProperties": false, "required": ["id", "status", "evidence"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "status": {"enum": ["not_applied", "applied", "unknown"]},
+        "evidence": {"anyOf": [{"$ref": "#/$defs/text"}, {"type": "null"}]}
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false, "required": ["name", "digest"],
+      "properties": {"name": {"$ref": "#/$defs/text"}, "digest": {"anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]}}
+    }
+  }
+}

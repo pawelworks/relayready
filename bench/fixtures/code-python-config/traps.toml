@@ -1,0 +1,7 @@
+name = "code-python-config"
+profile = "code"
+output_file = "answer.txt"
+expected_output = "port=8081"
+stale_output = "port=8080"
+guessed_output = "port=9000"
+traps = ["dead_end", "invariant", "stale_fact", "open_question"]

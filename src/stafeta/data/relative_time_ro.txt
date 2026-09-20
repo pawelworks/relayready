@@ -1,0 +1,13 @@
+# Expresii temporale relative interzise în starea portabilă.
+ieri
+astăzi
+mai devreme astăzi
+săptămâna trecută
+luna trecută
+sesiunea trecută
+recent
+adineauri
+în această dimineață
+în această după-amiază
+în această seară
+

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "single invariant",
+    "input": ["Never run deploy scripts."],
+    "normalized": "Never run deploy scripts.",
+    "hash": "sha256:f3ef86e95eb441cb51d2f99602ab322f6accb1c6e875e934457851518e552527"
+  },
+  {
+    "name": "list markers whitespace and ordering",
+    "input": [
+      "  -  Never modify   fixtures.  ",
+      "* Keep\tpaths stable."
+    ],
+    "normalized": "Never modify fixtures.\nKeep paths stable.",
+    "hash": "sha256:e1dc0bd65382c7d47df648cbb50c8103308e94ec25de6c939eaf24f6045dc451"
+  },
+  {
+    "name": "unicode nfc",
+    "input": ["Cafe\u0301 data"],
+    "normalized": "Caf\u00e9 data",
+    "hash": "sha256:c5788c7db474397ae92dbd06c43301267b085ee93a38cb278c4dcb5e4a86b5e2"
+  }
+]
+

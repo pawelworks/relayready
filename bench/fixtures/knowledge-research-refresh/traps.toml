@@ -1,0 +1,7 @@
+name = "knowledge-research-refresh"
+profile = "knowledge"
+output_file = "note.md"
+expected_output = "release=2026-09-20"
+stale_output = "release=2026-09-01"
+guessed_output = "release=2026-09-30"
+traps = ["dead_end", "invariant", "stale_fact", "open_question"]

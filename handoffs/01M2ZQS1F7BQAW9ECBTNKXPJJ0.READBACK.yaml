@@ -1,0 +1,27 @@
+stafeta_readback: "0.1"
+handoff_id: "01M2ZQS1F7BQAW9ECBTNKXPJJ0"
+created: "2026-09-20T15:49:00+00:00"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Preserve the tested donation candidate, then resume the existing site's supported publication workflow only when its missing prerequisites can be verified."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2, 3, 4, 5]
+rechecked:
+  - item: 5
+    result: confirmed
+    note: "The Site query in this task returned private, unpublished, version zero and no live URL. Recheck before a future deployment."
+  - item: 6
+    result: confirmed
+    note: "Required Sites skills are absent from the active catalog and searched plugin paths; sandbox network restrictions remain. This does not authorize bypassing them."
+conflicts: []
+questions_for_human:
+  - "What GitHub organization and repository URL should package metadata and repository links use?"
+  - "What private security reporting route should replace the placeholder in `SECURITY.md`?"
+  - "What public handle should identify the current maintainer?"
+first_action: "Recheck Sites skills and supported source-push access before publication; this closing readback records the current agent's verified state, not a new agent acceptance."

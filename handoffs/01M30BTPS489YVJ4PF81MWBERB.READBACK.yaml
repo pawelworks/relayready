@@ -1,0 +1,25 @@
+stafeta_readback: "0.1"
+handoff_id: "01M30BTPS489YVJ4PF81MWBERB"
+created: "2026-09-20T21:33:49Z"
+receiver:
+  agent: "codex-desktop"
+  vendor: "openai"
+  model: null
+goal_restated: "Prepare a truthful, reviewable open-source candidate at the chosen GitHub destination, while leaving identity verification and legal commitments with the owner."
+invariants_hash: "sha256:caac6b64d8de445a39216c48b66029086c367752ccccf12bb00c03e1eeeb2287"
+invariants_echo:
+  - "Never publish artifacts or deploy documentation without owner approval."
+  - "Never invent evidence, adoption claims, benchmark results, identities, or security contacts."
+  - "Never begin M2 until the owner accepts M1."
+will_not_redo: [1, 2, 3, 4, 5]
+rechecked:
+  - item: 4
+    result: confirmed
+    note: "Owner sign-in is complete. The preserved Free-plan form has the chosen organization name and personal-account owner; GitHub reports account verification complete. The contact email and Terms of Service have not been submitted, and no organization was created."
+conflicts: []
+questions_for_human:
+  - "May the contact email be used for GitHub and its Terms of Service accepted to create the free Pawelworks organization?"
+  - "What public GitHub identity and affiliation should the application list?"
+  - "What country or legal entity details apply to the proposed signatory?"
+  - "Does the owner attest contribution rights and approve the actual submission and transfer commitments?"
+first_action: "Wait for explicit email and account-terms consent, then resume from the preserved Free-plan form; do not publish to the personal placeholder. This readback records the current agent's state, not independent acceptance."

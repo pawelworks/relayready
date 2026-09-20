@@ -1,0 +1,460 @@
+{
+  "profile": "0.1-draft",
+  "scenarios": [
+    {
+      "id": "clean",
+      "label": "Ready to continue",
+      "summary": "All declared observations match the checkpoint.",
+      "contract": {
+        "handoff_created": "2026-09-20T12:00:00Z",
+        "readback_created": "2026-09-20T12:01:00Z",
+        "findings": []
+      },
+      "handoff": "---\nstafeta: \"0.1\"\nid: \"01K5M85YQ6E6XM1YSE7YB7A9PG\"\ncreated: \"2026-09-20T12:00:00Z\"\ntask: \"Continue the simulated staging migration review\"\nstatus: in_progress\nprofile: code\nparent: null\nsender:\n  agent: \"demo-sender\"\n  vendor: \"example\"\n  model: null\nlang: \"en\"\n---\n\n## Goal\n\nComplete the staging migration review using the pinned inputs and a checked continuation decision.\n\n## Done means\n\n- [ ] The continuation receipt identifies unresolved prerequisites before any action.\n\n## Invariants\n\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\n\n## State\n\n- The simulated staging resource has revision 42. [recheck]\n- All observations are simulated. [verified 2026-09-20: inspect this fixture]\n\n## Done so far\n\n- Recorded the simulation checkpoint in `CHECKPOINT.json`.\n\n## Do not redo\n\n- Do not apply the migration directly; the task is a staging review only.\n\n## Next steps\n\n1. Compare the current observations with the checkpoint before continuing the staging review.\n\n## Open questions\n\n- None.\n\n## Pointers\n\n- `CHECKPOINT.json`\n- `OBSERVATION.json`\n\n## Environment\n\n- This is a deterministic simulation; no external system is accessed.\n- Evaluation time: 2026-09-20T12:05:00Z.\n",
+      "readback": "stafeta_readback: '0.1'\nhandoff_id: 01K5M85YQ6E6XM1YSE7YB7A9PG\ncreated: '2026-09-20T12:01:00Z'\nreceiver:\n  agent: demo-receiver\n  vendor: example\n  model: null\ngoal_restated: Review the staged change with the execution limits and recovery checks.\ninvariants_hash: sha256:d2b36e880b87cc72d73cd92b6447829f98c3a9a91d5e913c27fd0c2e44470bc6\ninvariants_echo:\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\nwill_not_redo:\n- 1\nrechecked:\n- item: 1\n  result: confirmed\n  note: Simulated revision 42; the gate compares a later observation.\nconflicts: []\nquestions_for_human: []\nfirst_action: Compare the current observations with the checkpoint before continuing\n  the staging review.\n",
+      "checkpoint": {
+        "relayready_checkpoint": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "created": "2026-09-20T12:02:00Z",
+        "expires_at": "2026-09-20T13:00:00Z",
+        "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+        "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "idempotency_key": "demo-attempt-001"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "observation": {
+        "relayready_observation": "0.1-draft",
+        "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+        "observed_at": "2026-09-20T12:04:00Z",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "status": "not_applied",
+            "evidence": "urn:demo:reconciliation:no-write-observed"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "receipt": {
+        "relayready_receipt": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "evaluated_at": "2026-09-20T12:05:00Z",
+        "decision": "resume",
+        "reasons": [],
+        "bindings": {
+          "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+          "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+          "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+          "observation_sha256": "sha256:a02028cad8507fa61dbf8c3d994a8ea614aebb1626b4805bd36b647b7181018a"
+        }
+      },
+      "checkpoint_raw": "{\n  \"relayready_checkpoint\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"created\": \"2026-09-20T12:02:00Z\",\n  \"expires_at\": \"2026-09-20T13:00:00Z\",\n  \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n  \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"idempotency_key\": \"demo-attempt-001\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "observation_raw": "{\n  \"relayready_observation\": \"0.1-draft\",\n  \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n  \"observed_at\": \"2026-09-20T12:04:00Z\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"status\": \"not_applied\",\n      \"evidence\": \"urn:demo:reconciliation:no-write-observed\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "receipt_raw": "{\n  \"relayready_receipt\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"evaluated_at\": \"2026-09-20T12:05:00Z\",\n  \"decision\": \"resume\",\n  \"reasons\": [],\n  \"bindings\": {\n    \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n    \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n    \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n    \"observation_sha256\": \"sha256:a02028cad8507fa61dbf8c3d994a8ea614aebb1626b4805bd36b647b7181018a\"\n  }\n}\n"
+    },
+    {
+      "id": "revision-drift",
+      "label": "Resource changed",
+      "summary": "Staging moved from revision 42 to 43.",
+      "contract": {
+        "handoff_created": "2026-09-20T12:00:00Z",
+        "readback_created": "2026-09-20T12:01:00Z",
+        "findings": []
+      },
+      "handoff": "---\nstafeta: \"0.1\"\nid: \"01K5M85YQ6E6XM1YSE7YB7A9PG\"\ncreated: \"2026-09-20T12:00:00Z\"\ntask: \"Continue the simulated staging migration review\"\nstatus: in_progress\nprofile: code\nparent: null\nsender:\n  agent: \"demo-sender\"\n  vendor: \"example\"\n  model: null\nlang: \"en\"\n---\n\n## Goal\n\nComplete the staging migration review using the pinned inputs and a checked continuation decision.\n\n## Done means\n\n- [ ] The continuation receipt identifies unresolved prerequisites before any action.\n\n## Invariants\n\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\n\n## State\n\n- The simulated staging resource has revision 42. [recheck]\n- All observations are simulated. [verified 2026-09-20: inspect this fixture]\n\n## Done so far\n\n- Recorded the simulation checkpoint in `CHECKPOINT.json`.\n\n## Do not redo\n\n- Do not apply the migration directly; the task is a staging review only.\n\n## Next steps\n\n1. Compare the current observations with the checkpoint before continuing the staging review.\n\n## Open questions\n\n- None.\n\n## Pointers\n\n- `CHECKPOINT.json`\n- `OBSERVATION.json`\n\n## Environment\n\n- This is a deterministic simulation; no external system is accessed.\n- Evaluation time: 2026-09-20T12:05:00Z.\n",
+      "readback": "stafeta_readback: '0.1'\nhandoff_id: 01K5M85YQ6E6XM1YSE7YB7A9PG\ncreated: '2026-09-20T12:01:00Z'\nreceiver:\n  agent: demo-receiver\n  vendor: example\n  model: null\ngoal_restated: Review the staged change with the execution limits and recovery checks.\ninvariants_hash: sha256:d2b36e880b87cc72d73cd92b6447829f98c3a9a91d5e913c27fd0c2e44470bc6\ninvariants_echo:\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\nwill_not_redo:\n- 1\nrechecked:\n- item: 1\n  result: confirmed\n  note: Simulated revision 42; the gate compares a later observation.\nconflicts: []\nquestions_for_human: []\nfirst_action: Compare the current observations with the checkpoint before continuing\n  the staging review.\n",
+      "checkpoint": {
+        "relayready_checkpoint": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "created": "2026-09-20T12:02:00Z",
+        "expires_at": "2026-09-20T13:00:00Z",
+        "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+        "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "idempotency_key": "demo-attempt-001"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "observation": {
+        "relayready_observation": "0.1-draft",
+        "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+        "observed_at": "2026-09-20T12:04:00Z",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "43"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "status": "not_applied",
+            "evidence": "urn:demo:reconciliation:no-write-observed"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "receipt": {
+        "relayready_receipt": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "evaluated_at": "2026-09-20T12:05:00Z",
+        "decision": "recheck",
+        "reasons": [
+          {
+            "code": "resources_changed",
+            "message": "resources entry urn:demo:staging-db needs rechecking."
+          }
+        ],
+        "bindings": {
+          "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+          "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+          "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+          "observation_sha256": "sha256:57d81a3730e3bea841f5905bd3aba19adcdc3ef395081eec1f704c425d06320f"
+        }
+      },
+      "checkpoint_raw": "{\n  \"relayready_checkpoint\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"created\": \"2026-09-20T12:02:00Z\",\n  \"expires_at\": \"2026-09-20T13:00:00Z\",\n  \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n  \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"idempotency_key\": \"demo-attempt-001\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "observation_raw": "{\n  \"relayready_observation\": \"0.1-draft\",\n  \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n  \"observed_at\": \"2026-09-20T12:04:00Z\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"43\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"status\": \"not_applied\",\n      \"evidence\": \"urn:demo:reconciliation:no-write-observed\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "receipt_raw": "{\n  \"relayready_receipt\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"evaluated_at\": \"2026-09-20T12:05:00Z\",\n  \"decision\": \"recheck\",\n  \"reasons\": [\n    {\n      \"code\": \"resources_changed\",\n      \"message\": \"resources entry urn:demo:staging-db needs rechecking.\"\n    }\n  ],\n  \"bindings\": {\n    \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n    \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n    \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n    \"observation_sha256\": \"sha256:57d81a3730e3bea841f5905bd3aba19adcdc3ef395081eec1f704c425d06320f\"\n  }\n}\n"
+    },
+    {
+      "id": "uncertain-effect",
+      "label": "Interrupted mutation",
+      "summary": "The previous attempt has an unknown outcome.",
+      "contract": {
+        "handoff_created": "2026-09-20T12:00:00Z",
+        "readback_created": "2026-09-20T12:01:00Z",
+        "findings": []
+      },
+      "handoff": "---\nstafeta: \"0.1\"\nid: \"01K5M85YQ6E6XM1YSE7YB7A9PG\"\ncreated: \"2026-09-20T12:00:00Z\"\ntask: \"Continue the simulated staging migration review\"\nstatus: in_progress\nprofile: code\nparent: null\nsender:\n  agent: \"demo-sender\"\n  vendor: \"example\"\n  model: null\nlang: \"en\"\n---\n\n## Goal\n\nComplete the staging migration review using the pinned inputs and a checked continuation decision.\n\n## Done means\n\n- [ ] The continuation receipt identifies unresolved prerequisites before any action.\n\n## Invariants\n\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\n\n## State\n\n- The simulated staging resource has revision 42. [recheck]\n- All observations are simulated. [verified 2026-09-20: inspect this fixture]\n\n## Done so far\n\n- Recorded the simulation checkpoint in `CHECKPOINT.json`.\n\n## Do not redo\n\n- Do not apply the migration directly; the task is a staging review only.\n\n## Next steps\n\n1. Compare the current observations with the checkpoint before continuing the staging review.\n\n## Open questions\n\n- None.\n\n## Pointers\n\n- `CHECKPOINT.json`\n- `OBSERVATION.json`\n\n## Environment\n\n- This is a deterministic simulation; no external system is accessed.\n- Evaluation time: 2026-09-20T12:05:00Z.\n",
+      "readback": "stafeta_readback: '0.1'\nhandoff_id: 01K5M85YQ6E6XM1YSE7YB7A9PG\ncreated: '2026-09-20T12:01:00Z'\nreceiver:\n  agent: demo-receiver\n  vendor: example\n  model: null\ngoal_restated: Review the staged change with the execution limits and recovery checks.\ninvariants_hash: sha256:d2b36e880b87cc72d73cd92b6447829f98c3a9a91d5e913c27fd0c2e44470bc6\ninvariants_echo:\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\nwill_not_redo:\n- 1\nrechecked:\n- item: 1\n  result: confirmed\n  note: Simulated revision 42; the gate compares a later observation.\nconflicts: []\nquestions_for_human: []\nfirst_action: Compare the current observations with the checkpoint before continuing\n  the staging review.\n",
+      "checkpoint": {
+        "relayready_checkpoint": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "created": "2026-09-20T12:02:00Z",
+        "expires_at": "2026-09-20T13:00:00Z",
+        "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+        "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "idempotency_key": "demo-attempt-001"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "observation": {
+        "relayready_observation": "0.1-draft",
+        "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+        "observed_at": "2026-09-20T12:04:00Z",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "status": "unknown",
+            "evidence": null
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "receipt": {
+        "relayready_receipt": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "evaluated_at": "2026-09-20T12:05:00Z",
+        "decision": "escalate",
+        "reasons": [
+          {
+            "code": "effect_requires_reconciliation",
+            "message": "Effect staging-review-attempt is unknown; do not blindly replay it."
+          }
+        ],
+        "bindings": {
+          "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+          "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+          "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+          "observation_sha256": "sha256:e5aaea499132080cade70333cdbff47af3481e589aacb2eaf7fcf8f62f93da3a"
+        }
+      },
+      "checkpoint_raw": "{\n  \"relayready_checkpoint\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"created\": \"2026-09-20T12:02:00Z\",\n  \"expires_at\": \"2026-09-20T13:00:00Z\",\n  \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n  \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"idempotency_key\": \"demo-attempt-001\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "observation_raw": "{\n  \"relayready_observation\": \"0.1-draft\",\n  \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n  \"observed_at\": \"2026-09-20T12:04:00Z\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"status\": \"unknown\",\n      \"evidence\": null\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "receipt_raw": "{\n  \"relayready_receipt\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"evaluated_at\": \"2026-09-20T12:05:00Z\",\n  \"decision\": \"escalate\",\n  \"reasons\": [\n    {\n      \"code\": \"effect_requires_reconciliation\",\n      \"message\": \"Effect staging-review-attempt is unknown; do not blindly replay it.\"\n    }\n  ],\n  \"bindings\": {\n    \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n    \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n    \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n    \"observation_sha256\": \"sha256:e5aaea499132080cade70333cdbff47af3481e589aacb2eaf7fcf8f62f93da3a\"\n  }\n}\n"
+    },
+    {
+      "id": "changed-input",
+      "label": "Skill bytes changed",
+      "summary": "Skill bytes changed under the same release label 1.2.0.",
+      "contract": {
+        "handoff_created": "2026-09-20T12:00:00Z",
+        "readback_created": "2026-09-20T12:01:00Z",
+        "findings": []
+      },
+      "handoff": "---\nstafeta: \"0.1\"\nid: \"01K5M85YQ6E6XM1YSE7YB7A9PG\"\ncreated: \"2026-09-20T12:00:00Z\"\ntask: \"Continue the simulated staging migration review\"\nstatus: in_progress\nprofile: code\nparent: null\nsender:\n  agent: \"demo-sender\"\n  vendor: \"example\"\n  model: null\nlang: \"en\"\n---\n\n## Goal\n\nComplete the staging migration review using the pinned inputs and a checked continuation decision.\n\n## Done means\n\n- [ ] The continuation receipt identifies unresolved prerequisites before any action.\n\n## Invariants\n\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\n\n## State\n\n- The simulated staging resource has revision 42. [recheck]\n- All observations are simulated. [verified 2026-09-20: inspect this fixture]\n\n## Done so far\n\n- Recorded the simulation checkpoint in `CHECKPOINT.json`.\n\n## Do not redo\n\n- Do not apply the migration directly; the task is a staging review only.\n\n## Next steps\n\n1. Compare the current observations with the checkpoint before continuing the staging review.\n\n## Open questions\n\n- None.\n\n## Pointers\n\n- `CHECKPOINT.json`\n- `OBSERVATION.json`\n\n## Environment\n\n- This is a deterministic simulation; no external system is accessed.\n- Evaluation time: 2026-09-20T12:05:00Z.\n",
+      "readback": "stafeta_readback: '0.1'\nhandoff_id: 01K5M85YQ6E6XM1YSE7YB7A9PG\ncreated: '2026-09-20T12:01:00Z'\nreceiver:\n  agent: demo-receiver\n  vendor: example\n  model: null\ngoal_restated: Review the staged change with the execution limits and recovery checks.\ninvariants_hash: sha256:d2b36e880b87cc72d73cd92b6447829f98c3a9a91d5e913c27fd0c2e44470bc6\ninvariants_echo:\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\nwill_not_redo:\n- 1\nrechecked:\n- item: 1\n  result: confirmed\n  note: Simulated revision 42; the gate compares a later observation.\nconflicts: []\nquestions_for_human: []\nfirst_action: Compare the current observations with the checkpoint before continuing\n  the staging review.\n",
+      "checkpoint": {
+        "relayready_checkpoint": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "created": "2026-09-20T12:02:00Z",
+        "expires_at": "2026-09-20T13:00:00Z",
+        "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+        "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "idempotency_key": "demo-attempt-001"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "observation": {
+        "relayready_observation": "0.1-draft",
+        "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+        "observed_at": "2026-09-20T12:04:00Z",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "status": "not_applied",
+            "evidence": "urn:demo:reconciliation:no-write-observed"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:de209865ce39c49eb7befbcc99364834eb3925cd5106639ca05af3a9f2317199"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "receipt": {
+        "relayready_receipt": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "evaluated_at": "2026-09-20T12:05:00Z",
+        "decision": "recheck",
+        "reasons": [
+          {
+            "code": "run_inputs_changed",
+            "message": "run_inputs entry skill:review@1.2.0 needs rechecking."
+          }
+        ],
+        "bindings": {
+          "handoff_sha256": "sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f",
+          "readback_sha256": "sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0",
+          "checkpoint_sha256": "sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6",
+          "observation_sha256": "sha256:e846656f920e79aeaf5eaccc559ecb6162f775ddee1a474dba11b1702f7a49cc"
+        }
+      },
+      "checkpoint_raw": "{\n  \"relayready_checkpoint\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"created\": \"2026-09-20T12:02:00Z\",\n  \"expires_at\": \"2026-09-20T13:00:00Z\",\n  \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n  \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"idempotency_key\": \"demo-attempt-001\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "observation_raw": "{\n  \"relayready_observation\": \"0.1-draft\",\n  \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n  \"observed_at\": \"2026-09-20T12:04:00Z\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"status\": \"not_applied\",\n      \"evidence\": \"urn:demo:reconciliation:no-write-observed\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:de209865ce39c49eb7befbcc99364834eb3925cd5106639ca05af3a9f2317199\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "receipt_raw": "{\n  \"relayready_receipt\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"evaluated_at\": \"2026-09-20T12:05:00Z\",\n  \"decision\": \"recheck\",\n  \"reasons\": [\n    {\n      \"code\": \"run_inputs_changed\",\n      \"message\": \"run_inputs entry skill:review@1.2.0 needs rechecking.\"\n    }\n  ],\n  \"bindings\": {\n    \"handoff_sha256\": \"sha256:e43f1c200a704b3e89742be40b3263c19f98dfe49ffedf10c32c398d4846719f\",\n    \"readback_sha256\": \"sha256:5b55c7dcf5f71537b038244c26dbb652ea85223ca7e6f2868ae5377a019007a0\",\n    \"checkpoint_sha256\": \"sha256:a99585737d042110c49c1d1aaefde273bef0a4b4ed8ac742cee7577a6ce09fb6\",\n    \"observation_sha256\": \"sha256:e846656f920e79aeaf5eaccc559ecb6162f775ddee1a474dba11b1702f7a49cc\"\n  }\n}\n"
+    },
+    {
+      "id": "human-decision",
+      "label": "Owner decision pending",
+      "summary": "A correctly acknowledged question is unresolved.",
+      "contract": {
+        "handoff_created": "2026-09-20T12:00:00Z",
+        "readback_created": "2026-09-20T12:01:00Z",
+        "findings": [
+          {
+            "code": "human_questions_open",
+            "message": "Human questions require an answer before continuation."
+          }
+        ]
+      },
+      "handoff": "---\nstafeta: \"0.1\"\nid: \"01K5M85YQ6E6XM1YSE7YB7A9PG\"\ncreated: \"2026-09-20T12:00:00Z\"\ntask: \"Continue the simulated staging migration review\"\nstatus: in_progress\nprofile: code\nparent: null\nsender:\n  agent: \"demo-sender\"\n  vendor: \"example\"\n  model: null\nlang: \"en\"\n---\n\n## Goal\n\nComplete the staging migration review using the pinned inputs and a checked continuation decision.\n\n## Done means\n\n- [ ] The continuation receipt identifies unresolved prerequisites before any action.\n\n## Invariants\n\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\n\n## State\n\n- The simulated staging resource has revision 42. [recheck]\n- All observations are simulated. [verified 2026-09-20: inspect this fixture]\n\n## Done so far\n\n- Recorded the simulation checkpoint in `CHECKPOINT.json`.\n\n## Do not redo\n\n- Do not apply the migration directly; the task is a staging review only.\n\n## Next steps\n\n1. Compare the current observations with the checkpoint before continuing the staging review.\n\n## Open questions\n\n- Does the owner approve a longer staging lock window?\n\n## Pointers\n\n- `CHECKPOINT.json`\n- `OBSERVATION.json`\n\n## Environment\n\n- This is a deterministic simulation; no external system is accessed.\n- Evaluation time: 2026-09-20T12:05:00Z.\n",
+      "readback": "stafeta_readback: '0.1'\nhandoff_id: 01K5M85YQ6E6XM1YSE7YB7A9PG\ncreated: '2026-09-20T12:01:00Z'\nreceiver:\n  agent: demo-receiver\n  vendor: example\n  model: null\ngoal_restated: Review the staged change with the execution limits and recovery checks.\ninvariants_hash: sha256:d2b36e880b87cc72d73cd92b6447829f98c3a9a91d5e913c27fd0c2e44470bc6\ninvariants_echo:\n- Never execute a production database mutation.\n- Never retry an operation with an unknown prior outcome.\nwill_not_redo:\n- 1\nrechecked:\n- item: 1\n  result: confirmed\n  note: Simulated revision 42; the gate compares a later observation.\nconflicts: []\nquestions_for_human:\n- Does the owner approve a longer staging lock window?\nfirst_action: Compare the current observations with the checkpoint before continuing\n  the staging review.\n",
+      "checkpoint": {
+        "relayready_checkpoint": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "created": "2026-09-20T12:02:00Z",
+        "expires_at": "2026-09-20T13:00:00Z",
+        "handoff_sha256": "sha256:d840227ddb65196a9108e9a290419cf0dff4f7ff4274349e94e29783d3007d92",
+        "readback_sha256": "sha256:5f84c6eca516b931734a534c31453253b0e77010f842daa068cc5d55a54b60d5",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "idempotency_key": "demo-attempt-001"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "observation": {
+        "relayready_observation": "0.1-draft",
+        "checkpoint_sha256": "sha256:57c3ead657dfb43f247373b283ead33a57f7b96f9f48d7f665647d983e7c25a1",
+        "observed_at": "2026-09-20T12:04:00Z",
+        "resources": [
+          {
+            "id": "urn:demo:staging-db",
+            "revision": "42"
+          }
+        ],
+        "effects": [
+          {
+            "id": "staging-review-attempt",
+            "status": "not_applied",
+            "evidence": "urn:demo:reconciliation:no-write-observed"
+          }
+        ],
+        "run_inputs": [
+          {
+            "name": "skill:review@1.2.0",
+            "digest": "sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14"
+          },
+          {
+            "name": "policy:staging-review",
+            "digest": "sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16"
+          }
+        ]
+      },
+      "receipt": {
+        "relayready_receipt": "0.1-draft",
+        "task_id": "01K5M85YQ6E6XM1YSE7YB7A9PG",
+        "evaluated_at": "2026-09-20T12:05:00Z",
+        "decision": "escalate",
+        "reasons": [
+          {
+            "code": "human_questions_open",
+            "message": "Human questions require an answer before continuation."
+          }
+        ],
+        "bindings": {
+          "handoff_sha256": "sha256:d840227ddb65196a9108e9a290419cf0dff4f7ff4274349e94e29783d3007d92",
+          "readback_sha256": "sha256:5f84c6eca516b931734a534c31453253b0e77010f842daa068cc5d55a54b60d5",
+          "checkpoint_sha256": "sha256:57c3ead657dfb43f247373b283ead33a57f7b96f9f48d7f665647d983e7c25a1",
+          "observation_sha256": "sha256:2c541cdf3edfa5647ea10d9fe248ce0aa8bf4e87f6996f1cf2f84594eddc8a1e"
+        }
+      },
+      "checkpoint_raw": "{\n  \"relayready_checkpoint\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"created\": \"2026-09-20T12:02:00Z\",\n  \"expires_at\": \"2026-09-20T13:00:00Z\",\n  \"handoff_sha256\": \"sha256:d840227ddb65196a9108e9a290419cf0dff4f7ff4274349e94e29783d3007d92\",\n  \"readback_sha256\": \"sha256:5f84c6eca516b931734a534c31453253b0e77010f842daa068cc5d55a54b60d5\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"idempotency_key\": \"demo-attempt-001\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "observation_raw": "{\n  \"relayready_observation\": \"0.1-draft\",\n  \"checkpoint_sha256\": \"sha256:57c3ead657dfb43f247373b283ead33a57f7b96f9f48d7f665647d983e7c25a1\",\n  \"observed_at\": \"2026-09-20T12:04:00Z\",\n  \"resources\": [\n    {\n      \"id\": \"urn:demo:staging-db\",\n      \"revision\": \"42\"\n    }\n  ],\n  \"effects\": [\n    {\n      \"id\": \"staging-review-attempt\",\n      \"status\": \"not_applied\",\n      \"evidence\": \"urn:demo:reconciliation:no-write-observed\"\n    }\n  ],\n  \"run_inputs\": [\n    {\n      \"name\": \"skill:review@1.2.0\",\n      \"digest\": \"sha256:727fe3fcbf3c836005b60e7aefff27498b04079ffa117f450f36e4117c122f14\"\n    },\n    {\n      \"name\": \"policy:staging-review\",\n      \"digest\": \"sha256:03b95f4199a518c3970b3d5814aba68f6da9fe9e52321c47fd8ca74084517a16\"\n    }\n  ]\n}\n",
+      "receipt_raw": "{\n  \"relayready_receipt\": \"0.1-draft\",\n  \"task_id\": \"01K5M85YQ6E6XM1YSE7YB7A9PG\",\n  \"evaluated_at\": \"2026-09-20T12:05:00Z\",\n  \"decision\": \"escalate\",\n  \"reasons\": [\n    {\n      \"code\": \"human_questions_open\",\n      \"message\": \"Human questions require an answer before continuation.\"\n    }\n  ],\n  \"bindings\": {\n    \"handoff_sha256\": \"sha256:d840227ddb65196a9108e9a290419cf0dff4f7ff4274349e94e29783d3007d92\",\n    \"readback_sha256\": \"sha256:5f84c6eca516b931734a534c31453253b0e77010f842daa068cc5d55a54b60d5\",\n    \"checkpoint_sha256\": \"sha256:57c3ead657dfb43f247373b283ead33a57f7b96f9f48d7f665647d983e7c25a1\",\n    \"observation_sha256\": \"sha256:2c541cdf3edfa5647ea10d9fe248ce0aa8bf4e87f6996f1cf2f84594eddc8a1e\"\n  }\n}\n"
+    }
+  ]
+}

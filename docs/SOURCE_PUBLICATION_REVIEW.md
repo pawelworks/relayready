@@ -110,3 +110,21 @@ success was claimed before the terminal run result. Publication-status documenta
 is submitted through a protected pull request, which also exercises the hosted
 DCO check. Its current status is visible in GitHub; this paragraph does not claim
 that a subsequent PR or release has already passed or merged.
+
+## Publication-record PR verification
+
+On 21 September 2026 (owner's local date),
+[PR #1](https://github.com/pawelworks/relayready/pull/1) was verified merged using
+the protected rebase workflow. GitHub main is
+`c3c91545f6c7584a7f093e8904a7e8d26fc22d1a`; its
+[CI run 35541220709](https://github.com/pawelworks/relayready/actions/runs/35541220709)
+completed successfully with all twelve jobs. PR DCO run 35541087893 also passed.
+The local `public-source` branch was fast-forwarded to that public main; local
+deployment `main` remains intact. This is evidence for that exact revision,
+not a tagged release or a foundation submission.
+
+Wheel, source archive and contribution ZIP were rebuilt from that revision
+under the ignored local directory `dist/published-c3c9154/`, with a
+`PUBLICATION_RECEIPT.json` recording source, hosted checks and artifact hashes.
+The earlier owner-reviewed ZIP remains preserved separately. These are local
+review artifacts; no package registry publication is claimed.

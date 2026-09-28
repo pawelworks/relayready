@@ -6,8 +6,15 @@ The project currently has one maintainer: **Pavel Mihai Lucian**.
 - Security and private conduct contact: Pavel Mihai Lucian.
 - Foundation application contact and proposed contribution signatory: Pavel Mihai Lucian.
 - Public contact: [lucian.pavel@pawelworks.com](mailto:lucian.pavel@pawelworks.com).
+- Public GitHub handle: [@pavelpxp500](https://github.com/pavelpxp500).
+- Confirmed affiliation: PAWELWORKS, Romania; Pavel also confirmed Romania as
+  his country. He reports being the company's sole owner and sole worker.
 
 These project-side assignments were confirmed by the owner on 20 September 2026.
+The public handle, affiliation, country and company contribution route were
+confirmed on 21 September 2026 (owner's local date). The owner supplied
+PAWELWORKS S.R.L. and Mihai-Lucian Pavel, Administrator, for the legal section
+of the application; those company details are not independently registry-verified.
 They do not assign foundation roles, establish corporate authority, or constitute
 a contribution agreement or DCO signature. No second maintainer is currently appointed.
 

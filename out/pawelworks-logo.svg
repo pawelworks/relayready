@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 976 196" width="976" height="196" role="img" aria-label="Pavel Works">
+  
+  <rect x="0" y="0" width="976" height="22" fill="#E9A227"/>
+  <g transform="translate(0,48)"><path d="M 11,89 V 11 H 47 A 14,14 0 0 1 61,25 V 37 A 14,14 0 0 1 47,51 H 11" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M 132,-1.5 L 178,100 H 153.85 L 132,51.79 L 110.15,100 H 86 Z M 103,68 H 161 V 90 H 103 Z" fill="#EDE9E1"/>
+    <path d="M 180,0 L 211,101.5 L 242,0 H 219 L 211,26.19 L 203,0 Z M 232,0 L 263,101.5 L 294,0 H 271 L 263,26.19 L 255,0 Z" fill="#EDE9E1"/>
+    <path d="M 371,11 H 321 V 89 H 371 M 321,50 H 360" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M 417,11 V 89 H 467" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M 488,0 L 519,101.5 L 550,0 H 527 L 519,26.19 L 511,0 Z M 540,0 L 571,101.5 L 602,0 H 579 L 571,26.19 L 563,0 Z" fill="#EDE9E1"/>
+    <path d="M 645,9.5 H 667 A 14,14 0 0 1 681,23.5 V 76.5 A 14,14 0 0 1 667,90.5 H 645 A 14,14 0 0 1 631,76.5 V 23.5 A 14,14 0 0 1 645,9.5 Z" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M 727,89 V 11 H 763 A 14,14 0 0 1 777,25 V 37 A 14,14 0 0 1 763,51 H 727 M 746,53 L 779.57,93" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M 821,11 V 89 M 874.22,7.78 L 832,50 L 874.22,92.22" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M 965,24.5 A 15,15 0 0 0 950,9.5 H 930 A 15,15 0 0 0 915,24.5 V 35 A 15,15 0 0 0 930,50 H 950 A 15,15 0 0 1 965,65 V 75.5 A 15,15 0 0 1 950,90.5 H 930 A 15,15 0 0 1 915,75.5" fill="none" stroke="#EDE9E1" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/></g>
+  <rect x="0" y="174" width="976" height="22" fill="#E9A227"/>
+</svg>
